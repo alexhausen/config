@@ -1,0 +1,20 @@
+# F5
+KEY     145     UndelLine
+
+# F6
+KEY     146     DeleteLine
+
+# Cursor home
+KEY     105     MoveSOL
+
+# Cursor end
+KEY     106     MoveEOL
+
+# CONTROL-d
+KEY     4       DeleteLine
+
+# CONTROL-u
+KEY     15      Undo
+
+# CONTROL-y 
+KEY     19      Redo
