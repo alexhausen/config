@@ -1,3 +1,6 @@
+# ^K KC to be prompted to press a key and get its code
+# codes in HEX
+
 # F5
 KEY     145     UndelLine
 
@@ -18,3 +21,9 @@ KEY     15      Undo
 
 # CONTROL-y 
 KEY     19      Redo
+
+# CONTROL-l
+KEY	0c	GotoLine
+
+# ALT-u
+KEY	1f5	ToUpper
