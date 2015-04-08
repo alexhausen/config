@@ -82,12 +82,12 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alF --si'
 alias la='ls -A'
 alias l='ls -CF'
 alias minicom='minicom -c on -w'
 alias dektec='rdesktop -u dektec -p dektec753 ccd-7240.certi.org -T dektec'
-alias bcaster='rdesktop -u bcaster -p bcaster753 ccd-5820.certi.org -g 1024x768 -T Bcaster'
+#alias bcaster='rdesktop -u bcaster -p bcaster753 ccd-5820.certi.org -g 1024x768 -T Bcaster'
 #alias dektec_notebook='rdesktop -u dtv -p certidtv ccd-7834.certi.org -T notebook'
 #alias dektec_simon='rdesktop -u dektec -p bolivar ccd-5717.certi.org -T simon'
 #alias sifu='rdesktop -u instrument -p instrument rs_sfu.certi.org -T SFU'
@@ -95,7 +95,8 @@ alias mount_sshfs='sshfs -p 2245 CERTI\\alh@177.71.114.138:/home/likewise-open/C
 alias ssh_compile_server1='ssh -p 2245 -X alh@177.71.114.138'
 alias ssh_compile_server2='ssh -p 2245 -X alh@177.71.114.147'
 alias ssh_intelbras_board='ssh -p 16022 root@192.168.250.82'
-alias rdesktop_torio='rm .rdesktop/licence.ccd-7835l; rdesktop -u CERTI\\alh -g 1200x800 -k pt-br torio.certi.org'
+alias rdesktop_torio='rm ~/.rdesktop/licence.ccd-7835l; rdesktop -u CERTI\\alh -g 1600x800 -k pt-br torio.certi.org'
+alias rdesktop_bcaster='rdesktop ccd-5820.certi.org -u bcaster -p bcaster753 -g 1024x768 -k pt-br -T Bcaster'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
