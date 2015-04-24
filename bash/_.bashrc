@@ -119,3 +119,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 EDITOR=ne
+
+export ANDROID_SDK=/opt/android_tools/android-sdk-linux
+export ANDROID_HOME=$ANDROID_SDK
+export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
