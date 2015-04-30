@@ -2,7 +2,7 @@
 	name = Alexandre Hausen
 	email = alh@certi.org.br
 [push]
-	default = current
+	default = upstream
 [color]
 	status = auto
 	branch = auto
