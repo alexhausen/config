@@ -81,21 +81,24 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF --si'
+alias ll='ls -lF --si'
 alias la='ls -A'
 alias l='ls -CF'
 alias minicom='minicom -c on -w'
-alias dektec='rdesktop -u dektec -p dektec753 ccd-7240.certi.org -T dektec'
+alias rdesktop_dektec='rdesktop ccd-7240.certi.org -u dektec -p dektec753 -g 1024x768 -T dektec'
+alias rdesktop_cartola='rdesktop ccd-6071 -u cartola -p cartolafc2015 -g 1024x768 -T Cartola'
 #alias bcaster='rdesktop -u bcaster -p bcaster753 ccd-5820.certi.org -g 1024x768 -T Bcaster'
 #alias dektec_notebook='rdesktop -u dtv -p certidtv ccd-7834.certi.org -T notebook'
 #alias dektec_simon='rdesktop -u dektec -p bolivar ccd-5717.certi.org -T simon'
 #alias sifu='rdesktop -u instrument -p instrument rs_sfu.certi.org -T SFU'
-alias mount_sshfs='sshfs -p 2245 CERTI\\alh@177.71.114.138:/home/likewise-open/CERTI/alh/Projects /home/likewise-open/CERTI/alh/ProjectsRemote'
+alias mount_sshfs='sshfs -p 2245 CERTI\\alh@177.71.114.138:/home/likewise-open/CERTI/alh/Projects /home/alh/ProjectsRemote'
 alias ssh_compile_server1='ssh -p 2245 -X alh@177.71.114.138'
 alias ssh_compile_server2='ssh -p 2245 -X alh@177.71.114.147'
-alias ssh_intelbras_board='ssh -p 16022 root@192.168.250.82'
-alias rdesktop_torio='rm ~/.rdesktop/licence.ccd-7835l; rdesktop -u CERTI\\alh -g 1600x800 -k pt-br torio.certi.org'
+#alias ssh_intelbras_board='ssh -p 16022 root@192.168.250.82'
+alias rdesktop_torio='rm -f ~/.rdesktop/licence.ccd-7835l; rdesktop -u CERTI\\alh -g 1360x740 -k pt-br torio.certi.org'
 alias rdesktop_bcaster='rdesktop ccd-5820.certi.org -u bcaster -p bcaster753 -g 1024x768 -k pt-br -T Bcaster'
+alias lock='xscreensaver-command -lock'
+alias file-manager='pcmanfm &> /dev/null'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -118,9 +121,21 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 EDITOR=ne
-VISUAL=ne
-export GIT_EDITOR=$VISUAL
+VISUAL=$EDITOR
+export GIT_EDITOR=$EDITOR
 
 export ANDROID_SDK=/opt/android_tools/android-sdk-linux
 export ANDROID_HOME=$ANDROID_SDK
 export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
+
+# Suppress warning about accessibility bus
+# WARNING **: Couldn't connect to accessibility bus
+export NO_AT_BRIDGE=1
+
+# Wrong focus events with tiling window managers
+export GDK_CORE_DEVICE_EVENTS=1
+
+# Java
+export AWT_TOOLKIT=MToolkit
+export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.xrender=true'
