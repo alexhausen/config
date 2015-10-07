@@ -86,7 +86,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias minicom='minicom -c on -w'
 alias rdesktop_dektec='rdesktop ccd-7240.certi.org -u dektec -p dektec753 -g 1024x768 -T dektec'
-alias rdesktop_cartola='rdesktop ccd-6071 -u cartola -p cartolafc2015 -g 1024x768 -T Cartola'
+alias rdesktop_cartola='rdesktop ccd-6071 -u CERTI\\cartola -p cartolafc2015 -g 1024x768 -T Cartola'
 #alias bcaster='rdesktop -u bcaster -p bcaster753 ccd-5820.certi.org -g 1024x768 -T Bcaster'
 #alias dektec_notebook='rdesktop -u dtv -p certidtv ccd-7834.certi.org -T notebook'
 #alias dektec_simon='rdesktop -u dektec -p bolivar ccd-5717.certi.org -T simon'
@@ -139,3 +139,6 @@ export GDK_CORE_DEVICE_EVENTS=1
 export AWT_TOOLKIT=MToolkit
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.xrender=true'
+
+# fuzzy finder: https://github.com/junegunn/fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
