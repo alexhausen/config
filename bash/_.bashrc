@@ -53,10 +53,11 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+[ -f .name ] && PSHOST=$(<.name) || PSHOST='\h'
 if [ "$color_prompt" = yes ]; then
-    PS1='\t \[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w \$\[\e[00m\] '
+    PS1="\t \[\e[01;32m\]\u@$PSHOST\[\e[00m\]:\[\e[01;34m\]\w \$\[\e[00m\] "
 else
-    PS1='\t \u@\h:\w \$ '
+    PS1="\t \u@$PSHOST:\w \$ "
 fi
 unset color_prompt force_color_prompt
 
@@ -91,9 +92,14 @@ alias rdesktop_cartola='rdesktop ccd-6071 -u CERTI\\cartola -p cartolafc2015 -g 
 #alias dektec_notebook='rdesktop -u dtv -p certidtv ccd-7834.certi.org -T notebook'
 #alias dektec_simon='rdesktop -u dektec -p bolivar ccd-5717.certi.org -T simon'
 #alias sifu='rdesktop -u instrument -p instrument rs_sfu.certi.org -T SFU'
-alias mount_sshfs='sshfs -p 2245 CERTI\\alh@177.71.114.138:/home/likewise-open/CERTI/alh/Projects /home/alh/ProjectsRemote'
-alias ssh_compile_server1='ssh -p 2245 -X alh@177.71.114.138'
-alias ssh_compile_server2='ssh -p 2245 -X alh@177.71.114.147'
+alias mount_sshfs1='sshfs -p 2245 CERTI\\alh@177.71.114.138:/home/likewise-open/CERTI/alh/Projects /home/alh/Projects1'
+alias mount_sshfs2='sshfs -p 2245 CERTI\\alh@177.71.114.147:/home/likewise-open/CERTI/alh/Projects /home/alh/Projects2'
+alias mount_sshfs3='sshfs -p 2245 CERTI\\alh@177.71.114.148:/home/likewise-open/CERTI/alh/Projects /home/alh/Projects3'
+alias mount_sshfs='mount_sshfs1; mount_sshfs3'
+alias ssh_server1='ssh -p 2245 -X alh@177.71.114.138'
+alias ssh_server2='ssh -p 2245 -X alh@177.71.114.147'
+alias ssh_server3='ssh -p 2245 -X alh@177.71.114.148'
+
 #alias ssh_intelbras_board='ssh -p 16022 root@192.168.250.82'
 alias rdesktop_torio='rm -f ~/.rdesktop/licence.ccd-7835l; rdesktop -u CERTI\\alh -g 1360x740 -k pt-br torio.certi.org'
 alias rdesktop_bcaster='rdesktop ccd-5820.certi.org -u bcaster -p bcaster753 -g 1024x768 -k pt-br -T Bcaster'
