@@ -53,7 +53,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-[ -f .name ] && PSHOST=$(<.name) || PSHOST='\h'
+[ -f ~/.name ] && PSHOST=$(<~/.name) || PSHOST='\h'
 if [ "$color_prompt" = yes ]; then
     PS1="\t \[\e[01;32m\]\u@$PSHOST\[\e[00m\]:\[\e[01;34m\]\w \$\[\e[00m\] "
 else
