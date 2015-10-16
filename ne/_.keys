@@ -1,5 +1,7 @@
-# ^K KC to be prompted to press a key and get its code
+# ALT-k KC to be prompted to press a key and get its code
 # codes in HEX
+
+# see http://ne.di.unimi.it/docs/Commands.html
 
 # F5
 KEY     145     UndelLine
@@ -20,10 +22,22 @@ KEY     4       DeleteLine
 KEY     15      Undo
 
 # CONTROL-y 
-KEY     19      Redo
+#KEY     19      Redo
 
 # CONTROL-l
-KEY	0c	GotoLine
+KEY     0c      GotoLine
+
+# CONTROL-k
+KEY     0b      DeleteEOL 
+
+# ALT-k
+KEY    1eb      Exec
+
+# ALT-backspace
+KEY     1ff      DeletePrevWord
 
 # ALT-u
-KEY	1f5	ToUpper
+KEY	    1f5     ToUpper
+
+
+
