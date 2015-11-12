@@ -22,7 +22,16 @@ KEY     4       DeleteLine
 KEY     15      Undo
 
 # CONTROL-y 
-#KEY     19      Redo
+KEY     19      Paste
+
+# CONTROL-w
+KEY     17      DeletePrevWord
+
+# ALT-backspace
+KEY     1ff     DeletePrevWord
+
+# ALT-d
+KEY     1e4     DeleteNextWord
 
 # CONTROL-l
 KEY     0c      GotoLine
@@ -31,13 +40,14 @@ KEY     0c      GotoLine
 KEY     0b      DeleteEOL 
 
 # ALT-k
-KEY    1eb      Exec
-
-# ALT-backspace
-KEY     1ff      DeletePrevWord
+KEY     1eb     Exec
 
 # ALT-u
 KEY	    1f5     ToUpper
 
+# CONTROL-p
+KEY     10     LineUp
 
+# CONTROL-n
+KEY     e      LineDown
 
