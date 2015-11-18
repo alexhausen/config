@@ -133,10 +133,6 @@ EDITOR=ne
 VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
 
-export ANDROID_SDK=/opt/android_tools/android-sdk-linux
-export ANDROID_HOME=$ANDROID_SDK
-export PATH=${PATH}:${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools
-
 # Suppress warning about accessibility bus
 # WARNING **: Couldn't connect to accessibility bus
 export NO_AT_BRIDGE=1
