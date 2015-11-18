@@ -403,12 +403,11 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 
 -- {{{ auto start programs
 awful.util.spawn_with_shell(terminal)
-awful.util.spawn_with_shell(terminal)
 awful.util.spawn_with_shell("thunderbird")
 awful.util.spawn_with_shell("skype")
-awful.util.spawn_with_shell("rhythmbox")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
-awful.util.spawn_with_shell("firefox")
 awful.util.spawn_with_shell("gnome-sound-applet")
 awful.util.spawn_with_shell("nm-applet")
+awful.util.spawn_with_shell("firefox")
+awful.util.spawn_with_shell("rhythmbox")
 -- }}}
