@@ -52,7 +52,7 @@ end
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "sakura"
+terminal = "sakura -x tmux"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -84,8 +84,8 @@ layouts =
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
-notebook_screen = 1
-main_screen = screen.count()
+screen_1st = screen.count()
+screen_2nd = 1
 tags[1] = awful.tag({ "term", "mail", "mp3", "im", 5, 6, 7, 8, 9 }, 1, layouts[2])
 if screen.count() == 2 then
   tags[2] = awful.tag({ "term", "dev", "web", 4, 5, 6, 7, 8, 9 }, 2, layouts[2])
@@ -359,14 +359,16 @@ awful.rules.rules = {
                                  keys = clientkeys,
                                  buttons = clientbuttons } },
 
+    -- use xprop and look for the second value of WM_CLASS property
+    -- to get the 'class' string used below.
     { rule = { class = "gimp" }, properties = { floating = true } },
 
-    { rule = { class = "Eclipse" }, properties = { tag = tags[main_screen][2] } },
-    { rule = { class = "Firefox" }, properties = { tag = tags[main_screen][3] } },
+    { rule = { class = "Eclipse" }, properties = { tag = tags[screen_1st][2] } },
+    { rule = { class = "Firefox" }, properties = { tag = tags[screen_1st][3] } },
 
-    { rule = { class = "Thunderbird" }, properties = { tag = tags[notebook_screen][2] } },
-    { rule = { class = "Rhythmbox"   }, properties = { tag = tags[notebook_screen][3] } },
-    { rule = { class = "Skype"       }, properties = { tag = tags[notebook_screen][4] } }
+    { rule = { class = "Thunderbird" }, properties = { tag = tags[screen_2nd][2] } },
+    { rule = { class = "Rhythmbox"   }, properties = { tag = tags[screen_2nd][3] } },
+    { rule = { class = "Skype"       }, properties = { tag = tags[screen_2nd][4] } }
 }
 -- }}}
 
