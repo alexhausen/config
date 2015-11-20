@@ -99,9 +99,9 @@ alias mount_sshfs1='sshfs -p 2245 alh@177.71.114.138:/home/likewise-open/CERTI/a
 alias mount_sshfs2='sshfs -p 2245 alh@177.71.114.147:/home/likewise-open/CERTI/alh/Projects ~/Projects2'
 alias mount_sshfs3='sshfs -p 2245 alh@177.71.114.148:/home/alh/Projects ~/Projects3'
 alias mount_sshfs='mount_sshfs1; mount_sshfs3'
-alias ssh_server1='ssh -p 2245 -X alh@177.71.114.138'
-alias ssh_server2='ssh -p 2245 -X alh@177.71.114.147'
-alias ssh_server3='ssh -p 2245 -X alh@177.71.114.148'
+alias server1='ssh -p 2245 -Y alh@177.71.114.138'
+alias server2='ssh -p 2245 -Y alh@177.71.114.147'
+alias server3='ssh -p 2245 -Y alh@177.71.114.148'
 
 #alias ssh_intelbras_board='ssh -p 16022 root@192.168.250.82'
 alias rdesktop_torio='rm -f ~/.rdesktop/licence.ccd-7835l; rdesktop -u CERTI\\alh -g 1360x740 -k pt-br torio.certi.org'
@@ -147,3 +147,5 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsu
 
 # fuzzy finder: https://github.com/junegunn/fzf
 [ -f ~/projects/config/fzf/_.fzf.bash ] && source ~/projects/config/fzf/_.fzf.bash
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
