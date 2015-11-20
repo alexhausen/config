@@ -99,7 +99,7 @@ alias mount_sshfs1='sshfs -p 2245 alh@177.71.114.138:/home/likewise-open/CERTI/a
 alias mount_sshfs2='sshfs -p 2245 alh@177.71.114.147:/home/likewise-open/CERTI/alh/Projects ~/Projects2'
 alias mount_sshfs3='sshfs -p 2245 alh@177.71.114.148:/home/alh/Projects ~/Projects3'
 alias mount_sshfs='mount_sshfs1; mount_sshfs3'
-alias server1='ssh -p 2245 -Y alh@177.71.114.138'
+alias server1='ssh -p 2245 -X alh@177.71.114.138'
 alias server2='ssh -p 2245 -Y alh@177.71.114.147'
 alias server3='ssh -p 2245 -Y alh@177.71.114.148'
 
