@@ -404,7 +404,7 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 
 -- {{{ auto start programs
-awful.util.spawn_with_shell(terminal)
+awful.util.spawn_with_shell("sakura -n 2 -x tmux")
 awful.util.spawn_with_shell("thunderbird")
 awful.util.spawn_with_shell("skype")
 awful.util.spawn_with_shell("xscreensaver -no-splash")
