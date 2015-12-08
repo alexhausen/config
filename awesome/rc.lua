@@ -1,3 +1,6 @@
+--http://awesome.naquadah.org/wiki/Quickly_Setting_up_Awesome_with_Gnome
+--https://keramida.wordpress.com/2012/10/18/awesome-wm-in-ubuntu-12-04/
+
 -- Standard awesome library
 require("awful")
 require("awful.autofocus")
@@ -6,9 +9,6 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
-
--- Load Debian menu entries
-require("debian.menu")
 
 -- {{{volume up/down/mute
 function volume(vol)
@@ -95,17 +95,20 @@ end
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
+    { "Terminal",     terminal },
+    { "Preferences",  "gnome-control-center" },
+    { "Screenshot",   "gnome-screenshot -i" },
+    { "Firefox",      "firefox" },
+    { "FTP",          "filezilla" },
+    { "File manager", "pcmanfm" },
+    { "Run",          "gmrun" },
+    { "Restart",      awesome.restart },
+    { "Lock",         "gnome-screensaver-command --lock" },
+    { "Quit",         "pkill gnome-session" }
+--  {"Quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "Debian", debian.menu.Debian_menu.Debian },
-                                    { "open terminal", terminal }
-                                  }
-                        })
+mymainmenu = awful.menu({ items = myawesomemenu })
 
 mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
                                      menu = mymainmenu })
@@ -277,7 +280,8 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86Mail", function() end),
 
     -- lock screen Crtl+Alt+L
-    awful.key({ "Mod1", "Control" }, "l", function() awful.util.spawn("xscreensaver-command -lock") end)
+    awful.key({ "Mod1", "Control" }, "l", function() awful.util.spawn("gnome-screensaver-command --lock") end)
+--  awful.key({ "Mod1", "Control" }, "l", function() awful.util.spawn("xscreensaver-command -lock") end)
 )
 
 clientkeys = awful.util.table.join(
@@ -407,9 +411,10 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 awful.util.spawn_with_shell("sakura -n 2 -x tmux")
 awful.util.spawn_with_shell("thunderbird")
 awful.util.spawn_with_shell("skype")
-awful.util.spawn_with_shell("xscreensaver -no-splash")
 awful.util.spawn_with_shell("gnome-sound-applet")
-awful.util.spawn_with_shell("nm-applet")
 awful.util.spawn_with_shell("firefox")
 awful.util.spawn_with_shell("rhythmbox")
+--awful.util.spawn_with_shell("xscreensaver -no-splash")
+--awful.util.spawn_with_shell("gnome-keyring-daemon")
+--awful.util.spawn_with_shell("nm-applet")
 -- }}}
