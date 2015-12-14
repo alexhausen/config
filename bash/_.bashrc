@@ -145,6 +145,11 @@ export AWT_TOOLKIT=MToolkit
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.xrender=true'
 
+# Calculator function
+function calc () {
+  bc <<< "scale=2; $*"
+}
+
 # fuzzy finder: https://github.com/junegunn/fzf
 [ -f ~/projects/config/fzf/_.fzf.bash ] && source ~/projects/config/fzf/_.fzf.bash
 
