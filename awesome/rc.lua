@@ -1,5 +1,6 @@
 --http://awesome.naquadah.org/wiki/Quickly_Setting_up_Awesome_with_Gnome
 --https://keramida.wordpress.com/2012/10/18/awesome-wm-in-ubuntu-12-04/
+--https://wiki.archlinux.org/index.php/Awesome
 
 -- Standard awesome library
 require("awful")
@@ -92,6 +93,15 @@ if screen.count() == 2 then
 end
 -- }}}
 
+--  Quit from awesome-gnome or standard awesome
+function awesome_quit()
+    if os.getenv("DESKTOP_SESSION") == "awesome-gnome" then
+        os.execute("pkill gnome-session")
+    else
+        awesome.quit()
+    end
+end
+
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
@@ -104,8 +114,7 @@ myawesomemenu = {
     { "Run",          "gmrun" },
     { "Restart",      awesome.restart },
     { "Lock",         "gnome-screensaver-command --lock" },
-    { "Quit",         "pkill gnome-session" }
---  {"Quit", awesome.quit }
+    { "Quit",         awesome_quit }
 }
 
 mymainmenu = awful.menu({ items = myawesomemenu })
@@ -407,13 +416,21 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+function run_once(cmd)
+    local firstspace = cmd:find(" ")
+    if firstspace then
+        cmd_name = cmd:sub(0, firstspace-1)
+    end
+    awful.util.spawn_with_shell("pgrep -u $USER -x " .. cmd_name .. " > /dev/null || (" .. cmd .. ")")
+end
+
 -- {{{ auto start programs
-awful.util.spawn_with_shell("sakura -n 2 -x tmux")
-awful.util.spawn_with_shell("thunderbird")
-awful.util.spawn_with_shell("skype")
-awful.util.spawn_with_shell("gnome-sound-applet")
-awful.util.spawn_with_shell("firefox")
-awful.util.spawn_with_shell("rhythmbox")
+run_once("sakura -n 2 -x tmux")
+run_once("thunderbird")
+run_once("skype")
+run_once("gnome-sound-applet")
+run_once("firefox")
+run_once("rhythmbox")
 awful.util.spawn_with_shell("/usr/bin/dbus-launch --sh-syntax --exit-with-session")
 --awful.util.spawn_with_shell("xscreensaver -no-splash")
 --awful.util.spawn_with_shell("gnome-keyring-daemon")
