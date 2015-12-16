@@ -154,3 +154,5 @@ function calc () {
 [ -f ~/projects/config/fzf/_.fzf.bash ] && source ~/projects/config/fzf/_.fzf.bash
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+stty stop undef
