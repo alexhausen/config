@@ -88,6 +88,8 @@ alias ll='ls -o --si'
 alias la='ls -A'
 alias l='ls -CF'
 alias llsize='ll -S'
+
+alias tmux='tmux -2'
 alias minicom='minicom -c on -w'
 alias rdesktop_dektec='rdesktop ccd-7240.certi.org -u dektec -p dektec753 -g 1024x768 -T dektec'
 alias rdesktop_cartola='rdesktop ccd-6071 -u CERTI\\cartola -p cartolafc2015 -g 1024x768 -T Cartola'
