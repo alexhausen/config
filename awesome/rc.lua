@@ -417,9 +417,10 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 
 function run_once(cmd)
-    local firstspace = cmd:find(" ")
-    if firstspace then
-        cmd_name = cmd:sub(0, firstspace-1)
+    local first_space = cmd:find(" ")
+    local cmd_name = cmd
+    if first_space then
+        cmd_name = cmd:sub(0, first_space - 1)
     end
     awful.util.spawn_with_shell("pgrep -u $USER -x " .. cmd_name .. " > /dev/null || (" .. cmd .. ")")
 end
