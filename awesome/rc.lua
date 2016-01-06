@@ -53,7 +53,7 @@ end
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "sakura -x tmux"
+terminal = "sakura -x 'tmux -2'"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -425,7 +425,7 @@ function run_once(cmd)
 end
 
 -- {{{ auto start programs
-run_once("sakura -n 2 -x tmux")
+run_once("sakura -n 2 -x 'tmux -2'")
 run_once("thunderbird")
 run_once("skype")
 run_once("gnome-sound-applet")
