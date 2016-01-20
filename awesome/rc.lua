@@ -108,6 +108,7 @@ myawesomemenu = {
     { "Terminal",     terminal },
     { "Preferences",  "gnome-control-center" },
     { "Screenshot",   "gnome-screenshot -i" },
+    { "Calculator",   "gnome-calculator" },
     { "Firefox",      "firefox" },
     { "FTP",          "filezilla" },
     { "File manager", "pcmanfm" },
