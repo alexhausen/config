@@ -106,15 +106,15 @@ end
 -- Create a laucher widget and a main menu
 myawesomemenu = {
     { "Terminal",     terminal },
-    { "Preferences",  "gnome-control-center" },
+    { "Preferences",  "unity-control-center" },
     { "Screenshot",   "gnome-screenshot -i" },
     { "Calculator",   "gnome-calculator" },
     { "Web browser",  "firefox" },
     { "File manager", "pcmanfm" },
     { "FTP",          "filezilla" },
     { "Run",          "gmrun" },
-    { "Restart",      awesome.restart },
     { "Lock",         "gnome-screensaver-command --lock" },
+    { "Restart",      awesome.restart },
     { "Quit",         awesome_quit }
 }
 
@@ -273,7 +273,7 @@ globalkeys = awful.util.table.join(
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
-    awful.key({ modkey }, "x",
+    awful.key({ modkey },            "x",
               function ()
                   awful.prompt.run({ prompt = "Run Lua code: " },
                   mypromptbox[mouse.screen].widget,
@@ -282,12 +282,12 @@ globalkeys = awful.util.table.join(
               end),
 
     -- media keys
-    awful.key({ }, "XF86AudioRaiseVolume", function() volume("up") end),
-    awful.key({ }, "XF86AudioLowerVolume", function() volume("down") end),
-    awful.key({ }, "XF86AudioMute", function() volume("toggle") end),
-    awful.key({ }, "XF86HomePage", function() end),
-    awful.key({ }, "XF86Search", function() end),
-    awful.key({ }, "XF86Mail", function() end),
+--    awful.key({ }, "XF86AudioRaiseVolume", function() volume("up") end),
+--    awful.key({ }, "XF86AudioLowerVolume", function() volume("down") end),
+--    awful.key({ }, "XF86AudioMute", function() volume("toggle") end),
+--    awful.key({ }, "XF86HomePage", function() end),
+--    awful.key({ }, "XF86Search", function() end),
+--    awful.key({ }, "XF86Mail", function() end),
 
     -- lock screen Crtl+Alt+L
     awful.key({ "Mod1", "Control" }, "l", function() awful.util.spawn("gnome-screensaver-command --lock") end)
@@ -430,11 +430,12 @@ end
 run_once("sakura -n 2 -x 'tmux -2'")
 run_once("thunderbird")
 run_once("skype")
-run_once("gnome-sound-applet")
 run_once("firefox")
 run_once("rhythmbox")
+run_once("volumeicon")
 awful.util.spawn_with_shell("/usr/bin/dbus-launch --sh-syntax --exit-with-session")
 --awful.util.spawn_with_shell("xscreensaver -no-splash")
 --awful.util.spawn_with_shell("gnome-keyring-daemon")
 --awful.util.spawn_with_shell("nm-applet")
+--run_once("gnome-sound-applet")
 -- }}}
