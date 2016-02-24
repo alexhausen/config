@@ -433,6 +433,7 @@ run_once("skype")
 run_once("firefox")
 run_once("rhythmbox")
 run_once("volumeicon")
+run_once("rocketchat");
 awful.util.spawn_with_shell("/usr/bin/dbus-launch --sh-syntax --exit-with-session")
 --awful.util.spawn_with_shell("xscreensaver -no-splash")
 --awful.util.spawn_with_shell("gnome-keyring-daemon")
