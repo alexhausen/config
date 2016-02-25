@@ -382,7 +382,8 @@ awful.rules.rules = {
 
     { rule = { class = "Thunderbird" }, properties = { tag = tags[screen_2nd][2] } },
     { rule = { class = "Rhythmbox"   }, properties = { tag = tags[screen_2nd][3] } },
-    { rule = { class = "Skype"       }, properties = { tag = tags[screen_2nd][4] } }
+    { rule = { class = "Skype"       }, properties = { tag = tags[screen_2nd][4] } },
+    { rule = { class = "Rocket.Chat" }, properties = { tag = tags[screen_2nd][4] } },
 }
 -- }}}
 
