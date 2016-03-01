@@ -100,6 +100,8 @@ alias server3='ssh -p 2245 -Y alh@177.71.114.148'
 alias lock='xscreensaver-command -lock'
 alias file-manager='pcmanfm &> /dev/null'
 
+alias ne='TERM=xterm-256color ne'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -124,8 +126,7 @@ EDITOR=ne
 VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
 
-# Suppress warning about accessibility bus
-# WARNING **: Couldn't connect to accessibility bus
+# Suppress warning about accessibility bus: "WARNING **: Couldn't connect to accessibility bus"
 export NO_AT_BRIDGE=1
 
 # Wrong focus events with tiling window managers
@@ -145,5 +146,8 @@ function calc () {
 [ -f ~/projects/config/fzf/_.fzf.bash ] && source ~/projects/config/fzf/_.fzf.bash
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# setting ag as the default source for fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
 
 stty stop undef
