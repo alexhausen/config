@@ -29,6 +29,8 @@ alias file-manager='pcmanfm &> /dev/null'
 
 alias ne='TERM=xterm-256color ne'
 
+alias cal='ncal -b'
+
 alias wget='wget -c'
 alias ..='cd ..'
 alias ..1='cd ..'
