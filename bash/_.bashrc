@@ -113,3 +113,12 @@ function calc () {
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
 stty stop undef
+
+# update DISPLAY when connected to a remote host via tmux
+update_display() {
+  GOOD_DISPLAY=$(netstat -an | /bin/grep 0\ [0-9,:,.]*:60..\  | awk '{print $4}' | tail -n 1)
+  GOOD_DISPLAY=${GOOD_DISPLAY: -2}
+  if [ "$GOOD_DISPLAY" != "" ]; then
+    export DISPLAY=localhost:${GOOD_DISPLAY}.0
+  fi
+}
