@@ -13,7 +13,7 @@ alias clear='/usr/bin/clear;tmux clear-history'
 alias minicom='minicom -c on -w'
 
 alias rdesktop_dektec='rdesktop ccd-7240 -u dektec -p dektec753 -g 1024x768 -T dektec'
-alias rdesktop_cartola='rdesktop ccd-6071 -u cartola -p catarinense2016 -g 1024x768 -T Cartola'
+alias rdesktop_cartola='rdesktop ccd-6182.certi.org -d certi -u cartola -p catarinense2016 -g 1024x768 -T Cartola'
 alias rdesktop_bcaster='rdesktop ccd-5820 -u bcaster -p bcaster753 -g 1024x768 -k pt-br -T Bcaster'
 alias rdesktop_torio='rm -f ~/.rdesktop/licence.ccd-7835l; rdesktop -u CERTI\\alh -g 1360x740 -k pt-br torio'
 
