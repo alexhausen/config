@@ -1,0 +1,7 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=awesome-custom
+Comment=Highly configurable framework window manager
+TryExec=/usr/local/bin/awesome
+Exec=/usr/local/bin/awesome
+Type=Application
