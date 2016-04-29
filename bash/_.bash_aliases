@@ -12,9 +12,8 @@ alias tmux='tmux -2'
 alias clear='/usr/bin/clear;tmux clear-history'
 alias minicom='minicom -c on -w'
 
-alias rdesktop_dektec='rdesktop ccd-7240 -u dektec -p dektec753 -g 1024x768 -T dektec'
-alias rdesktop_cartola='rdesktop ccd-6182.certi.org -d certi -u cartola -p catarinense2016 -g 1024x768 -T Cartola'
-alias rdesktop_bcaster='rdesktop ccd-5820 -u bcaster -p bcaster753 -g 1024x768 -k pt-br -T Bcaster'
+alias rdesktop_cartola1='rdesktop ccd-6182.certi.org -d certi -u cartola -p catarinense2016 -g 1024x768 -T Cartola1'
+alias rdesktop_cartola2='rdesktop ccd-5717.certi.org -d certi -u cartola -p catarinense2016 -g 1024x768 -T Cartola2'
 alias rdesktop_torio='rm -f ~/.rdesktop/licence.ccd-7835l; rdesktop -u CERTI\\alh -g 1360x740 -k pt-br torio'
 
 alias mount_sshfs1='sshfs -p 2245 alh@177.71.114.138:/home/likewise-open/CERTI/alh/Projects ~/Projects1'
@@ -43,6 +42,6 @@ alias mkdir='mkdir -pv'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send "Alert" "$(history | tail -n1 ; [ $? = 0 ] && echo OK || echo Error)" --icon=dialog-warning'
 
 alias beep='paplay /usr/share/sounds/ubuntu/stereo/phone-incoming-call.ogg'
