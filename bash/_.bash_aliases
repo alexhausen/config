@@ -8,6 +8,8 @@ alias la='ls -A'
 alias l='ls -CF'
 alias llsize='ll -S'
 
+alias thunderbird='thunderbird &> /dev/null'
+
 alias tmux='tmux -2'
 alias clear='/usr/bin/clear;tmux clear-history'
 alias minicom='minicom -c on -w'
