@@ -1,7 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Name=awesome-custom
-Comment=Highly configurable framework window manager
-TryExec=/usr/local/bin/awesome
-Exec=/usr/local/bin/awesome
+Name=Xsession
+Comment=X session
+Exec=/etc/X11/Xsession
 Type=Application
