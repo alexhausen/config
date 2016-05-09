@@ -472,16 +472,6 @@ function run_once(cmd)
 end
 
 -- {{{ auto start programs
-run_once("sakura -n 2 -x 'tmux -2'")
-run_once("thunderbird")
-run_once("skype")
-run_once("firefox")
-run_once("rhythmbox")
-run_once("volumeicon")
-run_once("rocketchat");
-awful.util.spawn_with_shell("nm-applet")
-awful.util.spawn_with_shell("gnome-keyring-daemon")
---awful.util.spawn_with_shell("/usr/bin/dbus-launch --sh-syntax --exit-with-session")
---awful.util.spawn_with_shell("xscreensaver -no-splash")
+awful.util.spawn_with_shell(terminal)
 -- }}}
 
