@@ -107,6 +107,8 @@ myawesomemenu = {
     { "Calculator",   "gnome-calculator" },
     { "Web browser",  "firefox" },
     { "File manager", "pcmanfm" },
+    { "E-mail",       "thunderbird" },
+    { "Music",        "rhythmbox" },
     { "FTP",          "filezilla" },
     { "Run",          "gmrun" },
     { "Lock",         "gnome-screensaver-command --lock" },
