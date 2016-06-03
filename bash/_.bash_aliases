@@ -14,8 +14,8 @@ alias tmux='tmux -2'
 alias clear='/usr/bin/clear;tmux clear-history'
 alias minicom='minicom -c on -w'
 
-alias rdesktop_cartola1='rdesktop ccd-6182.certi.org -d certi -u cartola -p catarinense2016 -g 1024x768 -T Cartola1'
-alias rdesktop_cartola2='rdesktop ccd-5717.certi.org -d certi -u cartola -p catarinense2016 -g 1024x768 -T Cartola2'
+alias rdesktop_cartola1="rdesktop ccd-6711.certi.org -d certi -u cartola -p ${CARTOLA_PASSWORD} -g 1024x768 -T Cartola1"
+alias rdesktop_cartola2="rdesktop ccd-5717.certi.org -d certi -u cartola -p ${CARTOLA_PASSWORD} -g 1024x768 -T Cartola2"
 alias rdesktop_torio='rm -f ~/.rdesktop/licence.ccd-7835l; rdesktop -u CERTI\\alh -g 1360x740 -k pt-br torio'
 
 alias mount_sshfs1='sshfs -p 2245 alh@177.71.114.138:/home/likewise-open/CERTI/alh/Projects ~/Projects1'
