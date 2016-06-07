@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Xsession
+Comment=X session
+Exec=/etc/X11/Xsession
+Type=Application
