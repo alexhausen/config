@@ -28,8 +28,6 @@ alias server3='ssh -p 2245 -Y alh@177.71.114.148'
 
 alias file-manager='pcmanfm &> /dev/null'
 
-alias ne='TERM=xterm-256color ne'
-
 alias cal='ncal -b'
 
 alias wget='wget -c'
