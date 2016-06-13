@@ -1,0 +1,5 @@
+# A 256 color terminal with escape sequences for italic. Use: tic tmux-256color-italic.terminfo
+tmux-256color-italic|Terminal for tmux with 256 colors and italic,
+  sitm=\E[3m, ritm=\E[23m,
+  smso=\E[7m, rmso=\E[27m,
+  use=screen-256color,
