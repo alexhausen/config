@@ -1,0 +1,11 @@
+ln -s ~/projects/config/bash/_.bash_aliases ~/.bash_aliases
+ln -f -s ~/projects/config/bash/_.bashrc ~/.bashrc
+ln -f -s ~/projects/config/git/_.gitconfig_work ~/.gitconfig
+ln -f -s ~/projects/config/x/_.xinitrc ~/.xinitrc
+ln -f -s ~/projects/config/tmux/_.tmux.conf ~/.tmux.conf
+ln -s ~/projects/config/awesome ~/.config/awesome
+ln -s ~/projects/config/ne/_.keys ~/.ne/.keys
+ln -s ~/projects/config/ne/_.default#ap ~/.ne/.default#ap
+tic ~/projects/config/terminfo/tmux-256color-italic.terminfo
+sudo cp ~/projects/config/x/_usr_share_xsessions_custom.desktop /usr/share/xsessions/custom.desktop
+mkdir ~/bin
