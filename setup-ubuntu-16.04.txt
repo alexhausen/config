@@ -1,3 +1,7 @@
+sudo apt-get update
+sudo apt-get dist-upgrade
+sudo apt-get install -y git tmux silversearcher-ag ne awsome awsome-extra synaptic fonts-inconsolata gnome-settings-daemon volumeicon-alsa sakura
+
 ln -s ~/projects/config/bash/_.bash_aliases ~/.bash_aliases
 ln -f -s ~/projects/config/bash/_.bashrc ~/.bashrc
 ln -f -s ~/projects/config/git/_.gitconfig_work ~/.gitconfig
