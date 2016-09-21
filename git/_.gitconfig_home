@@ -1,10 +1,10 @@
 [push]
-	default = simple
+  default = simple
 [credential]
   username = alexhausen
 [user]
-	email = alex.hausen@gmail.com
-	name = Alexandre Hausen
+  email = alex.hausen@gmail.com
+  name = Alexandre Hausen
 [color]
   status = auto
   branch = auto
@@ -26,4 +26,4 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   st = status -sb
 [core]
-	autocrlf = false
+  autocrlf = false
