@@ -1,0 +1,1 @@
+Create a windows environment variable: SHELLOPTS with value: igncr 
