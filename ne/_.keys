@@ -51,3 +51,5 @@ KEY     10     LineUp
 # CONTROL-n
 KEY     e      LineDown
 
+# Backspace
+KEY     7f     BackSpace

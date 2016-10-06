@@ -2,6 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Get git branch name of current directory
+git_branch() {
+     git rev-parse --abbrev-ref HEAD 2> /dev/null
+}
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -57,9 +62,10 @@ fi
 
 [ -f ~/.name ] && PSHOST=$(<~/.name) || PSHOST='\h'
 if [ "$color_prompt" = yes ]; then
-    PS1="\t \[\e[01;32m\]\u@$PSHOST\[\e[00m\]:\[\e[01;34m\]\w \$\[\e[00m\] "
+#^[0;40;33m
+    PS1='\t \[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\] \[\e[0;40;33m\]$(git_branch "(%s)")\[\e[00m\]\$ '
 else
-    PS1="\t \u@$PSHOST:\w \$ "
+    PS1="\t \u@\h:\w \$ "
 fi
 unset color_prompt force_color_prompt
 
