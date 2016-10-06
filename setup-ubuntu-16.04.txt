@@ -1,6 +1,6 @@
 sudo apt-get update
 sudo apt-get dist-upgrade
-sudo apt-get install -y git ruby ruby-dev libncurses5-dev tmux silversearcher-ag ne awsome awsome-extra synaptic fonts-inconsolata gnome-settings-daemon volumeicon-alsa sakura
+sudo apt-get install -y git ruby ruby-dev libncurses5-dev tmux silversearcher-ag ne awesome awesome-extra synaptic fonts-inconsolata gnome-settings-daemon volumeicon-alsa sakura
 sudo gem install curses
 
 ln -s ~/projects/config/bash/_.bash_aliases ~/.bash_aliases
