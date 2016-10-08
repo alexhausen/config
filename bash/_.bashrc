@@ -63,7 +63,7 @@ fi
 [ -f ~/.name ] && PSHOST=$(<~/.name) || PSHOST='\h'
 if [ "$color_prompt" = yes ]; then
 #^[0;40;33m
-    PS1='\t \[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\] \[\e[0;40;33m\]$(git_branch "(%s)")\[\e[00m\]\$ '
+    PS1='\t \[\e[0;40;92m\]\u@\h\[\e[00m\]:\[\e[0;40;94m\]\w\[\e[00m\] \[\e[0;40;93m\]$(git_branch "(%s)")\[\e[00m\]\$ '
 else
     PS1="\t \u@\h:\w \$ "
 fi
