@@ -1,6 +1,6 @@
 sudo apt-get update
 sudo apt-get dist-upgrade
-sudo apt-get install -y git ruby ruby-dev libncurses5-dev tmux silversearcher-ag ne awsome awsome-extra synaptic fonts-inconsolata gnome-settings-daemon volumeicon-alsa sakura
+sudo apt-get install -y git tree linux-headers-generic virtualbox-guest-additions-iso pcmanfm ruby ruby-dev libncurses5-dev tmux silversearcher-ag ne awsome awsome-extra synaptic fonts-inconsolata gnome-settings-daemon volumeicon-alsa sakura
 sudo gem install curses
 
 ln -s ~/projects/config/bash/_.bash_aliases ~/.bash_aliases
@@ -14,3 +14,7 @@ ln -s ~/projects/config/ne/_.default#ap ~/.ne/.default#ap
 tic ~/projects/config/terminfo/tmux-256color-italic.terminfo
 sudo cp ~/projects/config/x/_usr_share_xsessions_custom.desktop /usr/share/xsessions/custom.desktop
 mkdir ~/bin
+
+#cd /usr/share/virtualbox
+#install VBoxGuestAdditions.iso as root
+#sudo mount -t vboxsf Documents /media/windows/
