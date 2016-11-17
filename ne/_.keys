@@ -9,11 +9,26 @@ KEY     145     UndelLine
 # F6
 KEY     146     DeleteLine
 
+# CONTROL-SPACE
+KEY    0        Mark
+
 # Cursor home
 KEY     105     MoveSOL
 
 # Cursor end
 KEY     106     MoveEOL
+
+# Alt-{
+#KEY     1fb
+
+# Alt-}
+#KEY     1fd
+
+# Alt->
+KEY     1bc     MoveSOF
+
+# Alt-<
+KEY     1be     MoveEOF
 
 # CONTROL-d
 KEY     4       DeleteLine
@@ -43,7 +58,7 @@ KEY     0b      DeleteEOL
 KEY     1eb     Exec
 
 # ALT-u
-KEY	    1f5     ToUpper
+KEY     1f5     ToUpper
 
 # CONTROL-p
 KEY     10     LineUp
@@ -53,3 +68,6 @@ KEY     e      LineDown
 
 # Backspace
 KEY     7f     BackSpace
+
+# CONTROL-SHIFT-\
+KEY    9c      MatchBracket
