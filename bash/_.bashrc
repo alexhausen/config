@@ -2,6 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# since rm is disabled, use 'del' or '/bin/rm'
+del() {
+  [ ! -d ~/.trash ] && mkdir ~/.trash
+  /bin/mv "$@" ~/.trash
+}
+
 # Get git branch name of current directory
 git_branch() {
      git rev-parse --abbrev-ref HEAD 2> /dev/null

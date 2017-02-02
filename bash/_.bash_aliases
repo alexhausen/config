@@ -39,6 +39,7 @@ alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
 alias ..6='cd ../../../../../'
 alias mkdir='mkdir -pv'
+alias rm='echo "rm is disabled, use del or /bin/rm instead."'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
