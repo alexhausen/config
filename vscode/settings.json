@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "telemetry.enableTelemetry": false,
+    "workbench.statusBar.visible": false,
+    "window.zoomLevel": 0,
+    "workbench.activityBar.visible": false,
+    "workbench.sideBar.location": "left",
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": false,
+    "editor.insertSpaces": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.fontFamily": "Inconsolata, Consolas, 'Courier New', monospace",
+    "C_Cpp.clang_format_formatOnSave": true,
+    "C_Cpp.clang_format_fallbackStyle": "Google"
+}
