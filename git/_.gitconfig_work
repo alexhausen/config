@@ -25,3 +25,4 @@
 	st = status -sb
 [core]
 	autocrlf = true
+	longpaths = true
