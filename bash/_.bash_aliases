@@ -28,7 +28,9 @@ alias server3='ssh -p 2245 -Y alh@177.71.114.148'
 
 alias file-manager='pcmanfm &> /dev/null'
 
-alias cal='ncal -b'
+if [[ -x /usr/bin/ncal ]]; then
+  alias cal='ncal -b'
+fi
 
 alias wget='wget -c'
 alias ..='cd ..'
