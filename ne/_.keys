@@ -31,7 +31,13 @@ KEY     1bc     MoveSOF
 KEY     1be     MoveEOF
 
 # CONTROL-d
-KEY     4       DeleteLine
+KEY     4       DeleteChar
+
+# CONTROL-D
+KEY    84       DeleteLine
+
+# Alt-d
+KEY   1e4       DeleteNextWord
 
 # CONTROL-u
 KEY     15      Undo
