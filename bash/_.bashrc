@@ -122,10 +122,9 @@ function calc () {
 }
 
 # fuzzy finder: https://github.com/junegunn/fzf
-[ -f ~/projects/config/fzf/_.fzf.bash ] && source ~/projects/config/fzf/_.fzf.bash
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
+# enable fzf inside tmux
+export FZF_TMUX=1
 # setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
