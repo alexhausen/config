@@ -10,7 +10,7 @@ del() {
 
 # Get git branch name of current directory
 git_branch() {
-     git rev-parse --abbrev-ref HEAD 2> /dev/null
+  git rev-parse --abbrev-ref HEAD 2> /dev/null
 }
 
 # If not running interactively, don't do anything
@@ -40,14 +40,14 @@ shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+  debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 TERM='tmux-256color-italic'
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    *color) color_prompt=yes;;
+  *color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -114,7 +114,7 @@ export GDK_CORE_DEVICE_EVENTS=1
 # Java
 export AWT_TOOLKIT=MToolkit
 export _JAVA_AWT_WM_NONREPARENTING=1
-#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.xrender=true'
+export JAVA_TOOL_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.xrender=true'
 
 # Calculator function
 function calc () {
@@ -138,3 +138,8 @@ update_display() {
     export DISPLAY=localhost:${GOOD_DISPLAY}.0
   fi
 }
+
+if [ ! -v PATH_EXPORTED_FROM_BASHRC ]; then
+  PATH=${PATH}:${HOME}/Java/jdk-8/bin:${HOME}/develop/flutter/bin:${HOME}/:${HOME}/Android/Sdk/emulator:${HOME}/Android/Sdk/platform-tools:${HOME}/.local/bin
+  export PATH_EXPORTED_FROM_BASHRC=
+fi
