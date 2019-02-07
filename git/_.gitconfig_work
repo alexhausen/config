@@ -21,8 +21,9 @@
 	changed = green
 	untracked = cyan
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	hist = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	st = status -sb
+  dir = log -n 1 --stat --name-only --format='Hash: %H'
 [core]
 	autocrlf = true
 	longpaths = true
