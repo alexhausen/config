@@ -1,99 +1,152 @@
 // Place your key bindings in this file to overwrite the defaults
 [
   //ctrl a = go to sol
-{
-  "key": "ctrl+a",
-  "command": "cursorHome",
-  "when": "editorTextFocus"
-},
+  {
+    "key": "ctrl+a",
+    "command": "cursorHome",
+    "when": "editorTextFocus"
+  },
   //ctrl e = go to eol
-{
-  "key": "ctrl+e",
-  "command": "cursorEnd",
-  "when": "editorTextFocus"
-},
-//ctrl d = delete current line
-{
-  "key": "ctrl+d",
-  "command": "editor.action.deleteLines",
-  "when": "editorTextFocus"
-},
-//ctrl k = delete until eol
-{
-  "key": "ctrl+k",
-  "command": "deleteAllRight",
-  "when": "editorTextFocus"
-},
-//alt backspace = delete previous word
-{
-  "key": "alt+backspace",
-  "command": "deleteWordLeft",
-  "when": "editorTextFocus"
-},
-//alt d = delte next word
-{
-  "key": "alt+d",
-  "command": "deleteWordRight",
-  "when": "editorTextFocus"
-},
-//ctrl n = next line
-{
-   "key": "ctrl+n",
-   "command": "cursorDown",
-   "when": "editorTextFocus"
-},
-//ctrl p = previos line
-{
-  "key": "ctrl+p",
-  "command": "cursorUp",
-  "when": "editorTextFocus"
-},
-// alt f = go to next word
-{
-  "key": "alt+f",
-  "command": "cursorWordRight",
-  "when": "editorTextFocus"
-},
-//alt b = go to previous word
-{
-  "key": "alt+b",
-  "command": "cursorWordLeft",
-  "when": "editorTextFocus"
-},
-//alt < = go to eof
-{
-  "key": "alt+shift+,",
-  "command": "cursorTop",
-  "when": "editorTextFocus"
-},
-//alt > = go to sof
-{
-  "key": "alt+shift+.",
-  "command": "cursorBottom",
-  "when": "editorTextFocus"
-},
-//alt u = to upper
-{
-  "key": "alt+u",
-  "command": "editor.action.transformToUppercase",
-  "when": "editorTextFocus"
-},
-//ctrl l = go to line
-{
-  "key": "ctrl+l",
-  "command": "workbench.action.gotoLine",
-  "when": "editorTextFocus"
-},
-//ctrl g = find next
-//{
-//   "key": "ctrl+g",
-//   "command": "editor.action.moveSelectionToNextFindMatch",
-//   "when": "editorTextFocus"
-//},
+  {
+    "key": "ctrl+e",
+    "command": "cursorEnd",
+    "when": "editorTextFocus"
+  },
+  //ctrl d = delete char
+  {
+    "key": "ctrl+shift+d",
+    "command": "editor.action.deleteLines",
+    "when": "editorTextFocus"
+  },
+  //ctrl shift d = delete current line
+  {
+    "key": "ctrl+d",
+    "command": "deleteRight",
+    "when": "editorTextFocus"
+  },
+  //ctrl k = delete until eol
+  {
+    "key": "ctrl+k",
+    "command": "deleteAllRight",
+    "when": "editorTextFocus"
+  },
+  //ctrl k = delete until bol
+  {
+    "key": "ctrl+u",
+    "command": "deleteAllLeft",
+    "when": "editorTextFocus"
+  },
+  //alt backspace = delete previous word
+  {
+    "key": "alt+backspace",
+    "command": "deleteWordLeft",
+    "when": "editorTextFocus"
+  },
+  //alt d = delete next word
+  {
+    "key": "alt+d",
+    "command": "deleteWordRight",
+    "when": "editorTextFocus"
+  },
+  //ctrl n = next line
+  {
+    "key": "ctrl+n",
+    "command": "cursorDown",
+    "when": "editorTextFocus"
+  },
+  //ctrl p = previos line
+  {
+    "key": "ctrl+p",
+    "command": "cursorUp",
+    "when": "editorTextFocus"
+  },
+  // alt f = go to next word
+  {
+    "key": "alt+f",
+    "command": "cursorWordRight",
+    "when": "editorTextFocus"
+  },
+  //alt b = go to previous word
+  {
+    "key": "alt+b",
+    "command": "cursorWordLeft",
+    "when": "editorTextFocus"
+  },
+  //alt < = go to eof
+  {
+    "key": "alt+shift+,",
+    "command": "cursorTop",
+    "when": "editorTextFocus"
+  },
+  //alt > = go to sof
+  {
+    "key": "alt+shift+.",
+    "command": "cursorBottom",
+    "when": "editorTextFocus"
+  },
+  //alt u = to upper
+  {
+    "key": "alt+u",
+    "command": "editor.action.transformToUppercase",
+    "when": "editorTextFocus"
+  },
+  //ctrl l = go to line
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.gotoLine",
+    "when": "editorTextFocus"
+  },
+  //ctrl g = find next
+  {
+     "key": "ctrl+g",
+     "command": "editor.action.moveSelectionToNextFindMatch",
+     "when": "editorTextFocus"
+  },
   //ctrl shit f = format document
-{
-  "key": "ctrl+shift+f",
-  "command": "editor.action.formatDocument",
-  "when": "editorTextFocus"
-}
+  {
+    "key": "ctrl+shift+f",
+    "command": "editor.action.formatDocument",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "C_Cpp.SwitchHeaderSource",
+    "when": "editorTextFocus && editorLangId == 'cpp'"
+  },
+  {
+    "key": "alt+o",
+    "command": "-C_Cpp.SwitchHeaderSource",
+    "when": "editorTextFocus && editorLangId == 'cpp'"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "C_Cpp.SwitchHeaderSource",
+    "when": "editorTextFocus && editorLangId == 'c'"
+  },
+  {
+    "key": "alt+o",
+    "command": "-C_Cpp.SwitchHeaderSource",
+    "when": "editorTextFocus && editorLangId == 'c'"
+  },
+  {
+    "key": "ctrl+0",
+    "command": "-workbench.action.focusSideBar"
+  },
+  {
+    "key": "ctrl+0",
+    "command": "workbench.action.zoomReset"
+  },
 ]
