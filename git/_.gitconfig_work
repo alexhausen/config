@@ -25,5 +25,5 @@
 	st = status -sb
   dir = log -n 1 --stat --name-only --format='Hash: %H'
 [core]
-	autocrlf = true
+	autocrlf = input
 	longpaths = true

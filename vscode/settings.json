@@ -1,15 +1,45 @@
-// Place your settings in this file to overwrite the default settings
 {
+    "editor.rulers": [
+        80
+    ],
     "telemetry.enableTelemetry": false,
-    "workbench.statusBar.visible": false,
-    "window.zoomLevel": 0,
-    "workbench.activityBar.visible": false,
-    "workbench.sideBar.location": "left",
-    "editor.renderWhitespace": "none",
-    "editor.renderControlCharacters": false,
-    "editor.insertSpaces": true,
+    "telemetry.enableCrashReporter": false,
+    "editor.tabSize": 2,
+    "editor.minimap.enabled": false,
+    "editor.minimap.renderCharacters": false,
+    "C_Cpp.clang_format_fallbackStyle": "Google",
+    "breadcrumbs.enabled": false,
+    "files.watcherExclude": {
+        ".build_*/**": true,
+        ".vscode/**": true,
+        "**/gen-cpp/**": true,
+        "**/prebuilt/**": true,
+        "**/third_party/**": true,
+        "output/**": true
+    },
+    "search.exclude": {
+        ".build_*/**": true,
+        ".vscode/**": true,
+        "artifacts/**": true,
+        "output/**": true
+    },
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.mouseWheelZoom": true,
+    "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
+    "workbench.startupEditor": "newUntitledFile",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "window.zoomLevel": 1,
+    "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "toggle",
-    "editor.fontFamily": "Inconsolata, Consolas, 'Courier New', monospace",
-    "C_Cpp.clang_format_formatOnSave": true,
-    "C_Cpp.clang_format_fallbackStyle": "Google"
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.fontSize": 13,
+    "editor.fontFamily": "'Fira Code', Ligconsolata, Inconsolata, 'Droid Sans Mono', 'Courier New', monospace",
+    "editor.fontLigatures": "'ss01', 'ss03', 'ss05', 'ss06'",
+    "files.exclude": {
+        "**/.build_*": true,
+        "output/**": true
+    },
+    "editor.renderWhitespace": "none"
 }
