@@ -140,6 +140,10 @@ update_display() {
 }
 
 if [ ! -v PATH_EXPORTED_FROM_BASHRC ]; then
-  PATH=${PATH}:${HOME}/develop/Java/jdk-8/bin:${HOME}/develop/flutter/bin:${HOME}/:${HOME}/develop/Android/Sdk/emulator:${HOME}/develop/Android/Sdk/platform-tools:${HOME}/.local/bin
+  PATH=${PATH}:${HOME}/develop/java/jre/bin:${HOME}/develop/flutter/bin:${HOME}/:${HOME}/develop/Android/Sdk/emulator:${HOME}/develop/Android/Sdk/platform-tools:${HOME}/.local/bin
   export PATH_EXPORTED_FROM_BASHRC=
+fi
+
+if [ -f $HOME/.cargo/env ]; then
+  source $HOME/.cargo/env
 fi
