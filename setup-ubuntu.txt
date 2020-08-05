@@ -1,8 +1,9 @@
-sudo apt-get update
-sudo apt-get dist-upgrade
-sudo apt-get install -y git tree linux-headers-generic virtualbox-guest-additions-iso pcmanfm ruby ruby-dev libncurses5-dev tmux silversearcher-ag ne awesome awsome-extra synaptic fonts-inconsolata gnome-settings-daemon volumeicon-alsa sakura
-sudo gem install curses
-
+sudo apt update
+sudo apt dist-upgrade
+sudo apt install -y git tree tmux ne synaptic gnome-tweaks vlc g++ g++-multilib gdb clang clang-format xz-utils zip unrar htop fzf mesa-utils ifupdown
+sudo apt install -y fonts-firacode fonts-inconsolata ttf-mscorefonts-installer fonts-dejavu ttf-dejavu
+sudo apt install -y virtualbox-guest-additions-iso linux-headers-generic pcmanfm awesome awsome-extra 
+ 
 ln -s ~/projects/config/bash/_.bash_aliases ~/.bash_aliases
 ln -f -s ~/projects/config/bash/_.bashrc ~/.bashrc
 ln -f -s ~/projects/config/git/_.gitconfig_work ~/.gitconfig
@@ -18,3 +19,12 @@ mkdir ~/bin
 #cd /usr/share/virtualbox
 #install VBoxGuestAdditions.iso as root
 #sudo mount -t vboxsf Documents /media/windows/
+
+#rust
+cargo install ripgrep
+
+#more MS fonts
+mkdir ~/.fonts
+wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
+
+https://github.com/tonsky/FiraCode
