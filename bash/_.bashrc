@@ -88,8 +88,6 @@ fi
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
@@ -123,10 +121,11 @@ function calc () {
 
 # fuzzy finder: https://github.com/junegunn/fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # enable fzf inside tmux
-export FZF_TMUX=1
+#export FZF_TMUX=1
 # setting ag as the default source for fzf
-export FZF_DEFAULT_COMMAND='ag -g ""'
+#export FZF_DEFAULT_COMMAND='ag -g ""'
 
 stty stop undef
 
@@ -140,6 +139,6 @@ update_display() {
 }
 
 if [ ! -v PATH_EXPORTED_FROM_BASHRC ]; then
-  PATH=${PATH}:${HOME}/develop/Java/jdk-8/bin:${HOME}/develop/flutter/bin:${HOME}/:${HOME}/develop/Android/Sdk/emulator:${HOME}/develop/Android/Sdk/platform-tools:${HOME}/.local/bin
+  PATH=/usr/lib/jvm/default-java/bin:${PATH}:${HOME}/develop/Java/jdk-8/bin:${HOME}/develop/flutter/bin:${HOME}/:${HOME}/develop/Android/Sdk/emulator:${HOME}/develop/Android/Sdk/platform-tools:${HOME}/.local/bin
   export PATH_EXPORTED_FROM_BASHRC=
 fi

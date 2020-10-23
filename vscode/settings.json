@@ -25,21 +25,38 @@
     },
     "editor.copyWithSyntaxHighlighting": false,
     "editor.mouseWheelZoom": true,
-    "workbench.colorTheme": "Braver's Solarized Dark (themed workbench)",
     "workbench.startupEditor": "newUntitledFile",
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "workbench.statusBar.visible": true,
     "window.menuBarVisibility": "toggle",
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
     "editor.acceptSuggestionOnEnter": "off",
-    "editor.fontSize": 13,
     "editor.fontFamily": "'Fira Code', Ligconsolata, Inconsolata, 'Droid Sans Mono', 'Courier New', monospace",
     "editor.fontLigatures": "'ss01', 'ss03', 'ss05', 'ss06'",
     "files.exclude": {
         "**/.build_*": true,
         "output/**": true
     },
-    "editor.renderWhitespace": "none"
+    "editor.renderWhitespace": "none",
+    "cmake.configureOnOpen": false,
+    "plantuml.previewFromUrlServer": true,
+    "plantuml.experimental.formatInLine": true,
+    "workbench.activityBar.visible": true,
+    "editor.columnSelection": false,
+    "editor.multiCursorModifier": "alt",
+    "liveshare.allowGuestDebugControl": true,
+    "shellcheck.disableVersionCheck": true,
+    "workbench.colorTheme": "Solarized Dark+",
+    "workbench.colorCustomizations": {
+        "[Solarized Dark+]": {}
+    },
+    "editor.tokenColorCustomizations": {
+        "[Solarized Dark+]": {}
+    },
+    "debug.console.fontSize": 17,
+    "terminal.integrated.fontSize": 15,
+    "markdown.preview.fontSize": 15,
+    "editor.fontSize": 15
 }

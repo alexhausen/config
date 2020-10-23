@@ -27,3 +27,5 @@
 [core]
 	autocrlf = input
 	longpaths = true
+[merge]
+	conflictstyle = diff3
