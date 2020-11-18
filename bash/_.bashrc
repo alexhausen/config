@@ -110,9 +110,10 @@ export NO_AT_BRIDGE=1
 export GDK_CORE_DEVICE_EVENTS=1
 
 # Java
-export AWT_TOOLKIT=MToolkit
-export _JAVA_AWT_WM_NONREPARENTING=1
-export JAVA_TOOL_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.xrender=true'
+#export AWT_TOOLKIT=MToolkit
+#export _JAVA_AWT_WM_NONREPARENTING=1
+#export JAVA_TOOL_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.xrender=true'
+export CLASSPATH=.:~/projects/coursera/algorithms/algs4.jar
 
 # Calculator function
 function calc () {
@@ -139,10 +140,15 @@ update_display() {
 }
 
 if [ ! -v PATH_EXPORTED_FROM_BASHRC ]; then
-  PATH=${PATH}:${HOME}/develop/java/jre/bin:${HOME}/develop/flutter/bin:${HOME}/:${HOME}/develop/Android/Sdk/emulator:${HOME}/develop/Android/Sdk/platform-tools:${HOME}/.local/bin
-  export PATH_EXPORTED_FROM_BASHRC=
-fi
+  PATH=${PATH}:${HOME}/develop/flutter/bin:${HOME}/:${HOME}/develop/Android/Sdk/emulator:${HOME}/develop/Android/Sdk/platform-tools:${HOME}/develop/node/bin:${HOME}/.local/bin
+  if [ -f $HOME/.cargo/env ]; then
+    source $HOME/.cargo/env
+  fi
+  # The next line updates PATH for the Google Cloud SDK.
+  if [ -f '/home/hausen/develop/google-cloud-sdk/path.bash.inc' ]; then . '/home/hausen/develop/google-cloud-sdk/path.bash.inc'; fi
 
-if [ -f $HOME/.cargo/env ]; then
-  source $HOME/.cargo/env
+  # The next line enables shell command completion for gcloud.
+  if [ -f '/home/hausen/develop/google-cloud-sdk/completion.bash.inc' ]; then . '/home/hausen/develop/google-cloud-sdk/completion.bash.inc'; fi
+
+  export PATH_EXPORTED_FROM_BASHRC=
 fi
