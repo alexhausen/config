@@ -1,62 +1,20 @@
 {
-    "editor.rulers": [
-        80
-    ],
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-    "editor.tabSize": 2,
-    "editor.minimap.enabled": false,
-    "editor.minimap.renderCharacters": false,
-    "C_Cpp.clang_format_fallbackStyle": "Google",
-    "breadcrumbs.enabled": false,
-    "files.watcherExclude": {
-        ".build_*/**": true,
-        ".vscode/**": true,
-        "**/gen-cpp/**": true,
-        "**/prebuilt/**": true,
-        "**/third_party/**": true,
-        "output/**": true
-    },
-    "search.exclude": {
-        ".build_*/**": true,
-        ".vscode/**": true,
-        "artifacts/**": true,
-        "output/**": true
-    },
-    "editor.copyWithSyntaxHighlighting": false,
-    "editor.mouseWheelZoom": true,
     "workbench.startupEditor": "newUntitledFile",
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
-    "window.zoomLevel": 0,
-    "workbench.statusBar.visible": true,
-    "window.menuBarVisibility": "toggle",
-    "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true,
-    "editor.acceptSuggestionOnEnter": "off",
-    "editor.fontFamily": "'Fira Code', Ligconsolata, Inconsolata, 'Droid Sans Mono', 'Courier New', monospace",
+    "workbench.colorTheme": "Solarized Dark",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": "'ss01', 'ss03', 'ss05', 'ss06'",
-    "files.exclude": {
-        "**/.build_*": true,
-        "output/**": true
-    },
-    "editor.renderWhitespace": "none",
-    "cmake.configureOnOpen": false,
-    "plantuml.previewFromUrlServer": true,
-    "plantuml.experimental.formatInLine": true,
-    "workbench.activityBar.visible": true,
-    "editor.columnSelection": false,
-    "editor.multiCursorModifier": "alt",
-    "liveshare.allowGuestDebugControl": true,
-    "shellcheck.disableVersionCheck": true,
-    "workbench.colorTheme": "Solarized Dark+",
-    "workbench.colorCustomizations": {
-        "[Solarized Dark+]": {}
-    },
-    "editor.tokenColorCustomizations": {
-        "[Solarized Dark+]": {}
-    },
-    "debug.console.fontSize": 17,
-    "terminal.integrated.fontSize": 15,
+    "editor.tabSize": 2,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.emptySelectionClipboard": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.fontSize": 15,
+    "debug.console.fontSize": 15,
     "markdown.preview.fontSize": 15,
-    "editor.fontSize": 15
+    "terminal.integrated.fontSize": 15,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.rulers": [ 80, 100 ],
+    "telemetry.enableTelemetry": false,
+    "window.zoomLevel": 0
 }

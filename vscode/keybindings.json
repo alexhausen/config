@@ -4,109 +4,94 @@
   {
     "key": "ctrl+a",
     "command": "cursorHome",
-    "when": "editorTextFocus"
+    "when": "textInputFocus"
   },
   //ctrl e = go to eol
   {
     "key": "ctrl+e",
     "command": "cursorEnd",
-    "when": "editorTextFocus"
+    "when": "textInputFocus"
+  },
+  //ctrl shift backspace = delete current line
+  {
+    "key": "ctrl+shift+backspace",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
   },
   //ctrl d = delete char
   {
-    "key": "ctrl+shift+d",
-    "command": "editor.action.deleteLines",
-    "when": "editorTextFocus"
-  },
-  //ctrl shift d = delete current line
-  {
     "key": "ctrl+d",
     "command": "deleteRight",
-    "when": "editorTextFocus"
+    "when": "textInputFocus && !editorReadonly"
   },
   //ctrl k = delete until eol
   {
     "key": "ctrl+k",
     "command": "deleteAllRight",
-    "when": "editorTextFocus"
+    "when": "textInputFocus && !editorReadonly"
   },
-  //ctrl k = delete until bol
+  //ctrl u = delete until bol
   {
     "key": "ctrl+u",
     "command": "deleteAllLeft",
-    "when": "editorTextFocus"
+    "when": "textInputFocus && !editorReadonly"
   },
   //alt backspace = delete previous word
   {
     "key": "alt+backspace",
     "command": "deleteWordLeft",
-    "when": "editorTextFocus"
+    "when": "textInputFocus && !editorReadonly"
   },
   //alt d = delete next word
   {
     "key": "alt+d",
     "command": "deleteWordRight",
-    "when": "editorTextFocus"
-  },
-  //ctrl n = next line
-  {
-    "key": "ctrl+n",
-    "command": "cursorDown",
-    "when": "editorTextFocus"
-  },
-  //ctrl p = previos line
-  {
-    "key": "ctrl+p",
-    "command": "cursorUp",
-    "when": "editorTextFocus"
+    "when": "textInputFocus && !editorReadonly"
   },
   // alt f = go to next word
   {
     "key": "alt+f",
     "command": "cursorWordRight",
-    "when": "editorTextFocus"
+    "when": "textInputFocus"
   },
   //alt b = go to previous word
   {
     "key": "alt+b",
     "command": "cursorWordLeft",
-    "when": "editorTextFocus"
+    "when": "textInputFocus"
   },
   //alt < = go to eof
   {
     "key": "alt+shift+,",
     "command": "cursorTop",
-    "when": "editorTextFocus"
+    "when": "textInputFocus"
   },
   //alt > = go to sof
   {
     "key": "alt+shift+.",
     "command": "cursorBottom",
-    "when": "editorTextFocus"
+    "when": "textInputFocus"
   },
   //alt u = to upper
   {
     "key": "alt+u",
     "command": "editor.action.transformToUppercase",
-    "when": "editorTextFocus"
+    "when": "textInputFocus && !editorReadonly"
   },
   //ctrl l = go to line
   {
     "key": "ctrl+l",
     "command": "workbench.action.gotoLine",
-    "when": "editorTextFocus"
   },
   //ctrl g = find next
   {
-     "key": "ctrl+g",
-     "command": "editor.action.moveSelectionToNextFindMatch",
-     "when": "editorTextFocus"
+    "key": "ctrl+g",
+    "command": "editor.action.moveSelectionToNextFindMatch",
+    "when": "textInputFocus"
   },
-  //ctrl shit f = format document
   {
-    "key": "ctrl+shift+f",
-    "command": "editor.action.formatDocument",
-    "when": "editorTextFocus"
+    "key": "ctrl+g",
+    "command": "-workbench.action.gotoLine"
   },
   {
     "key": "alt+z",
@@ -114,12 +99,21 @@
   },
   {
     "key": "ctrl+tab",
+    "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
+  },
+  {
+    "key": "ctrl+tab",
     "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
     "when": "inEditorsPicker && inQuickOpen"
   },
   {
-    "key": "ctrl+tab",
-    "command": "-workbench.action.openNextRecentlyUsedEditorInGroup"
+    "key": "ctrl+shift+tab",
+    "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
+    "when": "inEditorsPicker && inQuickOpen"
   },
   {
     "key": "ctrl+tab",
@@ -150,21 +144,7 @@
     "command": "workbench.action.zoomReset"
   },
   {
-    "key": "ctrl+alt+-",
-    "command": "-workbench.action.quickInputBack",
-    "when": "inQuickOpen"
-  },
-  {
-    "key": "ctrl+alt+-",
-    "command": "-workbench.action.navigateBack"
-  },
-  {
     "key": "alt+left",
-    "command": "-workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+up",
     "command": "-workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus"
   },
@@ -179,15 +159,54 @@
   },
   {
     "key": "alt+right",
-    "command": "-workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+right",
     "command": "workbench.action.navigateForward"
   },
   {
     "key": "ctrl+shift+-",
     "command": "-workbench.action.navigateForward"
   },
+  {
+    "key": "alt+right",
+    "command": "-workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "alt+left",
+    "command": "-workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "-workbench.action.terminal.searchWorkspace",
+    "when": "terminalFocus && terminalProcessSupported && terminalProcessSupported && terminalTextSelected"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "-workbench.view.search",
+    "when": "!searchViewletVisible"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "notebook.formatCell",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "editor.action.formatDocument.none",
+    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorHasDocumentFormattingProvider && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "notebook.format",
+    "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
+  }
 ]

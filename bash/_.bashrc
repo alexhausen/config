@@ -68,7 +68,7 @@ fi
 
 [ -f ~/.name ] && PSHOST=$(<~/.name) || PSHOST='\h'
 if [ "$color_prompt" = yes ]; then
-#see projects/examples/bash/fmt-colors.sh
+    #see examples/bash/fmt-colors.sh
     PS1='\t \[\e[0;49;92m\]\u@\h\[\e[00m\]:\[\e[0;49;94m\]\w\[\e[00m\] \[\e[0;49;93m\]$(git_branch "(%s)")\[\e[00m\]\$ '
 else
     PS1="\t \u@\h:\w \$ "
@@ -113,7 +113,7 @@ export GDK_CORE_DEVICE_EVENTS=1
 #export AWT_TOOLKIT=MToolkit
 #export _JAVA_AWT_WM_NONREPARENTING=1
 #export JAVA_TOOL_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.xrender=true'
-export CLASSPATH=.:~/projects/coursera/algorithms/algs4.jar
+#export CLASSPATH=.:~/path_to/file.jar
 
 # Calculator function
 function calc () {
@@ -123,10 +123,8 @@ function calc () {
 # fuzzy finder: https://github.com/junegunn/fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# enable fzf inside tmux
-#export FZF_TMUX=1
-# setting ag as the default source for fzf
-#export FZF_DEFAULT_COMMAND='ag -g ""'
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND='fd --type f'
 
 stty stop undef
 
@@ -140,15 +138,17 @@ update_display() {
 }
 
 if [ ! -v PATH_EXPORTED_FROM_BASHRC ]; then
-  PATH=${PATH}:${HOME}/develop/flutter/bin:${HOME}/:${HOME}/develop/Android/Sdk/emulator:${HOME}/develop/Android/Sdk/platform-tools:${HOME}/develop/node/bin:${HOME}/.local/bin
-  if [ -f $HOME/.cargo/env ]; then
-    source $HOME/.cargo/env
+  if [ -d "$HOME/bin" ] ; then
+      PATH="$HOME/bin:$PATH"
   fi
-  # The next line updates PATH for the Google Cloud SDK.
-  if [ -f '/home/hausen/develop/google-cloud-sdk/path.bash.inc' ]; then . '/home/hausen/develop/google-cloud-sdk/path.bash.inc'; fi
-
-  # The next line enables shell command completion for gcloud.
-  if [ -f '/home/hausen/develop/google-cloud-sdk/completion.bash.inc' ]; then . '/home/hausen/develop/google-cloud-sdk/completion.bash.inc'; fi
-
+  if [ -d "$HOME/.local/bin" ] ; then
+      PATH="$HOME/.local/bin:$PATH"
+  fi
+  if [ -d "$HOME/develop" ] ; then
+      PATH="$PATH:$HOME/develop/flutter/bin:$HOME/develop/Android/Sdk/emulator:$HOME/develop/Android/Sdk/platform-tools:$HOME/develop/node/bin"
+  fi
+  if [ -f "$HOME/.cargo/env" ]; then
+      source "$HOME/.cargo/env"
+  fi
   export PATH_EXPORTED_FROM_BASHRC=
 fi

@@ -2,18 +2,19 @@ sudo apt update
 sudo apt dist-upgrade
 sudo apt install -y git htop tree tmux ne synaptic gnome-tweaks vlc g++ g++-multilib gdb clang clang-format xz-utils zip unrar htop fzf mesa-utils ifupdown
 sudo apt install -y fonts-firacode fonts-inconsolata ttf-mscorefonts-installer fonts-dejavu ttf-dejavu
-sudo apt install -y virtualbox-guest-additions-iso linux-headers-generic pcmanfm awesome awsome-extra 
- 
-ln -s ~/projects/config/bash/_.bash_aliases ~/.bash_aliases
-ln -f -s ~/projects/config/bash/_.bashrc ~/.bashrc
-ln -f -s ~/projects/config/git/_.gitconfig_work ~/.gitconfig
-ln -f -s ~/projects/config/x/_.xinitrc ~/.xinitrc
-ln -f -s ~/projects/config/tmux/_.tmux.conf ~/.tmux.conf
-ln -s ~/projects/config/awesome ~/.config/awesome
-ln -s ~/projects/config/ne/_.keys ~/.ne/.keys
-ln -s ~/projects/config/ne/_.default#ap ~/.ne/.default#ap
-tic ~/projects/config/terminfo/tmux-256color-italic.terminfo
-sudo cp ~/projects/config/x/_usr_share_xsessions_custom.desktop /usr/share/xsessions/custom.desktop
+sudo apt install -y virtualbox-guest-additions-iso linux-headers-generic pcmanfm awesome awsome-extra
+
+ln -s ~/config/bash/_.bash_aliases ~/.bash_aliases
+ln -f -s ~/config/bash/_.bashrc ~/.bashrc
+ln -f -s ~/config/bash/_.profile ~/.profile
+ln -f -s ~/config/git/_.gitconfig ~/.gitconfig
+ln -f -s ~/config/x/_.xinitrc ~/.xinitrc
+ln -f -s ~/config/tmux/_.tmux.conf ~/.tmux.conf
+ln -s ~/config/awesome ~/.config/awesome
+ln -s ~/config/ne/_.keys ~/.ne/.keys
+ln -s ~/config/ne/_.default#ap ~/.ne/.default#ap
+tic ~/config/terminfo/tmux-256color-italic.terminfo
+sudo cp ~/config/x/_usr_share_xsessions_custom.desktop /usr/share/xsessions/custom.desktop
 mkdir ~/bin
 
 #cd /usr/share/virtualbox
@@ -22,6 +23,7 @@ mkdir ~/bin
 
 #rust
 cargo install ripgrep
+cargo install fd-find
 
 #more MS fonts
 mkdir ~/.fonts
@@ -31,4 +33,3 @@ https://github.com/tonsky/FiraCode
 
 # disable power save
 echo "options snd_hda_intel power_save=0" | sudo tee -a /etc/modprobe.d/audio_disable_powersave.conf
-
