@@ -32,3 +32,7 @@ alias rm='echo "rm is disabled, use del or /bin/rm instead."'
 alias alert='notify-send "Alert" "$(history | tail -n1 ; [ $? = 0 ] && echo OK || echo Error)" --icon=dialog-warning'
 
 alias flutter='TERM=xterm-256color flutter'
+
+if [ -f ~/.bash_aliases_work ]; then
+  . ~/.bash_aliases_work
+fi
