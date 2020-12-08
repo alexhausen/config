@@ -10,7 +10,10 @@ del() {
 
 # Get git branch name of current directory
 git_branch() {
-  git rev-parse --abbrev-ref HEAD 2> /dev/null
+  local _gb=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  if [ ! -z "$_gb" ]; then
+    echo " ${_gb}"
+  fi
 }
 
 # If not running interactively, don't do anything
@@ -69,9 +72,9 @@ fi
 [ -f ~/.name ] && PSHOST=$(<~/.name) || PSHOST='\h'
 if [ "$color_prompt" = yes ]; then
     #see examples/bash/fmt-colors.sh
-    PS1='\t \[\e[0;49;92m\]\u@\h\[\e[00m\]:\[\e[0;49;94m\]\w\[\e[00m\] \[\e[0;49;93m\]$(git_branch "(%s)")\[\e[00m\]\$ '
+    PS1=$'\[\e[0;49;92m\]\u@\h\[\e[00m\]:\[\e[0;49;94m\]\w\[\e[00m\]\[\e[0;49;93m\]$(git_branch "(%s)") \[\e[00m\]\u3bb '
 else
-    PS1="\t \u@\h:\w \$ "
+    PS1='\u@\h:\w$ '
 fi
 unset color_prompt force_color_prompt
 

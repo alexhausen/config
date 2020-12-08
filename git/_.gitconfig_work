@@ -1,16 +1,16 @@
 [core]
 	excludesfile = ~/.gitignore
 [user]
-	email = 73551124+hausen3778@users.noreply.github.com
+#	email = 73551124+hausen3778@users.noreply.github.com
+	email = alexandre.hausen@3778.care
 	name = Alexandre Hausen
-[includeIf "gitdir:~/3778/"]
-	path = .gitconfig-3778
 [fetch]
 	prune = true
 [pull]
 	rebase = merges
 [push]
-	default = current
+#	default = current
+	default = upstream
 [color "branch"]
 	current = yellow reverse
 	local = yellow
