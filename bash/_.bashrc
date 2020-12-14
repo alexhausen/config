@@ -126,8 +126,11 @@ function calc () {
 # fuzzy finder: https://github.com/junegunn/fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Setting fd as the default source for fzf
+# set fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
+
+# enable fzf on tmux
+export FZF_TMUX=1
 
 stty stop undef
 
