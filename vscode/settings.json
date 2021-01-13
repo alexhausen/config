@@ -16,5 +16,14 @@
     "editor.acceptSuggestionOnEnter": "off",
     "editor.rulers": [ 80, 100 ],
     "telemetry.enableTelemetry": false,
-    "window.zoomLevel": 0
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "window.menuBarVisibility": "toggle",
+    "python.showStartPage": false,
+    "python.languageServer": "Pylance",
+    "python.venvPath": "~/.virtualenvs"
 }

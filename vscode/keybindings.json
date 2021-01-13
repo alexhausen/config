@@ -176,37 +176,18 @@
     "when": "terminalFocus && terminalProcessSupported"
   },
   {
-    "key": "ctrl+shift+f",
-    "command": "-workbench.action.findInFiles"
+    "key": "shift+alt+f",
+    "command": "-filesExplorer.findInFolder",
+    "when": "explorerResourceIsFolder && explorerViewletVisible && filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "ctrl+shift+f",
-    "command": "-workbench.action.terminal.searchWorkspace",
-    "when": "terminalFocus && terminalProcessSupported && terminalProcessSupported && terminalTextSelected"
-  },
-  {
-    "key": "ctrl+shift+f",
-    "command": "-workbench.view.search",
-    "when": "!searchViewletVisible"
-  },
-  {
-    "key": "ctrl+shift+f",
+    "key": "shift+alt+f",
     "command": "editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   },
   {
-    "key": "ctrl+shift+f",
-    "command": "notebook.formatCell",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
-  },
-  {
-    "key": "ctrl+shift+f",
-    "command": "editor.action.formatDocument.none",
-    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorHasDocumentFormattingProvider && !editorReadonly"
-  },
-  {
-    "key": "ctrl+shift+f",
-    "command": "notebook.format",
-    "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
+    "key": "ctrl+shift+i",
+    "command": "-editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
   }
 ]

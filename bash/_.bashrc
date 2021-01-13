@@ -158,3 +158,8 @@ if [ ! -v PATH_EXPORTED_FROM_BASHRC ]; then
   fi
   export PATH_EXPORTED_FROM_BASHRC=
 fi
+
+# python virtualenv
+#export WORKON_HOME=$HOME/.virtualenvs
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+#source /usr/local/bin/virtualenvwrapper.sh
