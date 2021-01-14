@@ -13,7 +13,7 @@ ln -f -s ~/config/tmux/_.tmux.conf ~/.tmux.conf
 ln -s ~/config/awesome ~/.config/awesome
 ln -s ~/config/ne/_.keys ~/.ne/.keys
 ln -s ~/config/ne/_.default#ap ~/.ne/.default#ap
-tic ~/config/terminfo/tmux-256color-italic.terminfo
+tic ~/config/terminfo/xterm-color.terminfo
 sudo cp ~/config/x/_usr_share_xsessions_custom.desktop /usr/share/xsessions/custom.desktop
 mkdir ~/bin
 

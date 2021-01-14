@@ -1,0 +1,5 @@
+# Replaces the xterm color terminal, adds escape sequences for italics. Use: tic xterm-color.terminfo
+xterm-color|Terminal replacement for xterm with 256 colors and italics,
+  sitm=\E[3m, ritm=\E[23m,
+  smso=\E[7m, rmso=\E[27m,
+  use=xterm-256color,
