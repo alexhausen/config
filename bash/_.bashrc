@@ -2,12 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# since rm is disabled, use 'del' or '/bin/rm'
-del() {
-  [ ! -d ~/.trash ] && mkdir ~/.trash
-  /bin/mv "$@" ~/.trash
-}
-
 # Get git branch name of current directory
 git_branch() {
   local _gb=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
@@ -163,3 +157,7 @@ fi
 #export WORKON_HOME=$HOME/.virtualenvs
 #export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 #source /usr/local/bin/virtualenvwrapper.sh
+
+if [ -f ~/.bash_local ]; then
+  . ~/.bash_local
+fi

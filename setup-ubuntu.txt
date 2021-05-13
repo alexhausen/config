@@ -25,6 +25,9 @@ mkdir ~/bin
 cargo install ripgrep
 cargo install fd-find
 
+#python
+pip install trash-cli
+
 #more MS fonts
 mkdir ~/.fonts
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash

@@ -26,6 +26,11 @@
 	untracked = cyan
 	remoteBranch = cyan
 [alias]
-	hist = log --graph --oneline --decorate --all
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	hist = log --color --graph --oneline --decorate --all
+	lg = log --color --graph --oneline --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	st = status -sb
+	co = checkout
+	br = branch
+	pushf = push --force-with-lease
+	ver = describe --tags
+	fuckup = commit --fixup HEAD
