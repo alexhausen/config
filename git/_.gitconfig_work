@@ -1,36 +1,4 @@
-[core]
-	excludesfile = ~/.gitignore
 [user]
 #	email = 73551124+hausen3778@users.noreply.github.com
 	email = alexandre.hausen@3778.care
 	name = Alexandre Hausen
-[fetch]
-	prune = true
-[pull]
-	rebase = merges
-[push]
-#	default = current
-	default = upstream
-[color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
-[color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
-	remoteBranch = cyan
-[alias]
-	hist = log --color --graph --oneline --decorate --all
-	lg = log --color --graph --oneline --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	st = status -sb
-	co = checkout
-	br = branch
-	pushf = push --force-with-lease
-	ver = describe --tags
-	fuckup = commit --fixup HEAD
