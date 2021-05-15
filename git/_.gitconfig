@@ -2,6 +2,10 @@
 	excludesfile = ~/.gitignore
 [include]
   path = ~/.gitconfig-local
+[includeIf "gitdir:~/config"]
+  path = ~/config/_.gitconfig_home
+[includeIf "gitdir:~/develop/examples"]
+  path = ~/config/_.gitconfig_home
 [fetch]
 	prune = true
 [pull]
