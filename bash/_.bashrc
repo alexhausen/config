@@ -109,6 +109,7 @@ export GDK_CORE_DEVICE_EVENTS=1
 # Java
 #export AWT_TOOLKIT=MToolkit
 #export _JAVA_AWT_WM_NONREPARENTING=1
+#export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
 #export JAVA_TOOL_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true -Dsun.java2d.xrender=true'
 #export CLASSPATH=.:~/path_to/file.jar
 
@@ -145,7 +146,8 @@ if [ ! -v PATH_EXPORTED_FROM_BASHRC ]; then
       PATH="$HOME/.local/bin:$PATH"
   fi
   if [ -d "$HOME/develop" ] ; then
-      PATH="$PATH:$HOME/develop/flutter/bin:$HOME/develop/Android/Sdk/emulator:$HOME/develop/Android/Sdk/platform-tools:$HOME/develop/node/bin"
+      DEVDIR="$HOME/develop"
+      PATH="$DEVDIR/java/jdk/bin:$DEVDIR/flutter/bin:$DEVDIR/Android/Sdk/emulator:$DEVDIR/Android/Sdk/platform-tools:$DEVDIR/node/bin:$PATH"
   fi
   if [ -f "$HOME/.cargo/env" ]; then
       source "$HOME/.cargo/env"
