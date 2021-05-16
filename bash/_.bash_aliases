@@ -11,9 +11,9 @@ alias llsize='ll -S'
 alias tmux='tmux -2'
 #alias file-manager='pcmanfm &> /dev/null'
 
-if [[ -x /usr/bin/ncal ]]; then
-  alias cal='ncal -b'
-fi
+command -v ncal > /dev/null && alias cal='ncal -b'
+command -v bpytop > /dev/null && alias top='bpytop'
+
 
 alias wget='wget -c'
 alias ..='cd ..'
