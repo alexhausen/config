@@ -1,193 +1,98 @@
-// Place your key bindings in this file to overwrite the defaults
+// Place your key bindings in this file to override the defaultsauto[]
 [
-  //ctrl a = go to sol
-  {
-    "key": "ctrl+a",
-    "command": "cursorHome",
-    "when": "textInputFocus"
-  },
-  //ctrl e = go to eol
-  {
-    "key": "ctrl+e",
-    "command": "cursorEnd",
-    "when": "textInputFocus"
-  },
-  //ctrl shift backspace = delete current line
-  {
-    "key": "ctrl+shift+backspace",
-    "command": "editor.action.deleteLines",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  //ctrl d = delete char
-  {
-    "key": "ctrl+d",
-    "command": "deleteRight",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  //ctrl k = delete until eol
-  {
-    "key": "ctrl+k",
-    "command": "deleteAllRight",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  //ctrl u = delete until bol
-  {
-    "key": "ctrl+u",
-    "command": "deleteAllLeft",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  //alt backspace = delete previous word
-  {
-    "key": "alt+backspace",
-    "command": "deleteWordLeft",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  //alt d = delete next word
-  {
-    "key": "alt+d",
-    "command": "deleteWordRight",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  // alt f = go to next word
-  {
-    "key": "alt+f",
-    "command": "cursorWordRight",
-    "when": "textInputFocus"
-  },
-  //alt b = go to previous word
-  {
-    "key": "alt+b",
-    "command": "cursorWordLeft",
-    "when": "textInputFocus"
-  },
-  //alt < = go to eof
-  {
-    "key": "alt+shift+,",
-    "command": "cursorTop",
-    "when": "textInputFocus"
-  },
-  //alt > = go to sof
-  {
-    "key": "alt+shift+.",
-    "command": "cursorBottom",
-    "when": "textInputFocus"
-  },
-  //alt u = to upper
-  {
-    "key": "alt+u",
-    "command": "editor.action.transformToUppercase",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  //ctrl l = go to line
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.gotoLine",
-  },
-  //ctrl g = find next
-  {
-    "key": "ctrl+g",
-    "command": "editor.action.moveSelectionToNextFindMatch",
-    "when": "textInputFocus"
-  },
-  {
-    "key": "ctrl+g",
-    "command": "-workbench.action.gotoLine"
-  },
-  {
-    "key": "alt+z",
-    "command": "workbench.action.toggleZenMode"
-  },
-  {
-    "key": "ctrl+tab",
-    "command": "-workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-  },
-  {
-    "key": "ctrl+shift+tab",
-    "command": "-workbench.action.quickOpenLeastRecentlyUsedEditorInGroup"
-  },
-  {
-    "key": "ctrl+tab",
-    "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
-    "when": "inEditorsPicker && inQuickOpen"
-  },
-  {
-    "key": "ctrl+shift+tab",
-    "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
-    "when": "inEditorsPicker && inQuickOpen"
-  },
-  {
-    "key": "ctrl+tab",
-    "command": "C_Cpp.SwitchHeaderSource",
-    "when": "editorTextFocus && editorLangId == 'cpp'"
-  },
-  {
-    "key": "alt+o",
-    "command": "-C_Cpp.SwitchHeaderSource",
-    "when": "editorTextFocus && editorLangId == 'cpp'"
-  },
-  {
-    "key": "ctrl+tab",
-    "command": "C_Cpp.SwitchHeaderSource",
-    "when": "editorTextFocus && editorLangId == 'c'"
-  },
-  {
-    "key": "alt+o",
-    "command": "-C_Cpp.SwitchHeaderSource",
-    "when": "editorTextFocus && editorLangId == 'c'"
-  },
-  {
-    "key": "ctrl+0",
-    "command": "-workbench.action.focusSideBar"
-  },
-  {
-    "key": "ctrl+0",
-    "command": "workbench.action.zoomReset"
-  },
-  {
-    "key": "alt+left",
-    "command": "-workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+left",
-    "command": "workbench.action.navigateBack"
-  },
-  {
-    "key": "alt+down",
-    "command": "-workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+right",
-    "command": "workbench.action.navigateForward"
-  },
-  {
-    "key": "ctrl+shift+-",
-    "command": "-workbench.action.navigateForward"
-  },
-  {
-    "key": "alt+right",
-    "command": "-workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "alt+left",
-    "command": "-workbench.action.terminal.focusPreviousPane",
-    "when": "terminalFocus && terminalProcessSupported"
-  },
-  {
-    "key": "shift+alt+f",
-    "command": "-filesExplorer.findInFolder",
-    "when": "explorerResourceIsFolder && explorerViewletVisible && filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "shift+alt+f",
-    "command": "editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-  },
-  {
-    "key": "ctrl+shift+i",
-    "command": "-editor.action.formatDocument",
-    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
-  }
+    {
+        "key": "alt+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-notebook.centerActiveCell",
+        "when": "notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "-expandLineSelection",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.gotoLine"
+    },
+    {
+        "key": "ctrl+g",
+        "command": "editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+d",
+        "command": "-editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+alt+z",
+        "command": "workbench.action.toggleZenMode"
+    },
+    {
+        "key": "ctrl+k z",
+        "command": "-workbench.action.toggleZenMode"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "-filesExplorer.findInFolder",
+        "when": "explorerResourceIsFolder && explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "editor.action.formatDocument.none",
+        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "-editor.action.formatDocument.none",
+        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "deleteAllRight"
+    },
+    {
+        "key": "alt+left",
+        "command": "-workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+left",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+alt+-",
+        "command": "-workbench.action.navigateBack"
+    },
+    {
+        "key": "alt+right",
+        "command": "-workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "alt+right",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-workbench.action.navigateForward"
+    }
 ]
