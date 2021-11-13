@@ -52,8 +52,13 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.detectIndentation": false,
-    "window.menuBarVisibility": "toggle",
     "editor.acceptSuggestionOnCommitCharacter": false,
     "telemetry.telemetryLevel": "error",
-    "window.zoomLevel": 1,
+    "gitlens.hovers.currentLine.over": "line",
+    "gitlens.codeLens.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.hovers.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "window.menuBarVisibility": "toggle",
+    "editor.tabSize": 2,
 }

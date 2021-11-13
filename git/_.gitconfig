@@ -32,3 +32,4 @@
 	pushf = push --force-with-lease
 	ver = describe --tags
 	fuckup = commit --fixup HEAD
+	praise = blame
