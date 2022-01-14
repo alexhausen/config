@@ -33,3 +33,6 @@
 	ver = describe --tags
 	fuckup = commit --fixup HEAD
 	praise = blame
+[user]
+	email = alex.hausen@gmail.com
+	name = Alexandre Hausen
