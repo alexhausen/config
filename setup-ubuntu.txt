@@ -44,3 +44,11 @@ echo "options snd_hda_intel power_save=0" | sudo tee -a /etc/modprobe.d/audio_di
 # gdm login config
 sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml
 sudo chown gdm:gdm ~gdm/.config/monitors.xml
+
+# git ssh config
+
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -N '' -C 'alex.hausen@gmail.com' && \
+echo "\n\nCopy the line bellow and add to you GitHub account" && \
+cat ~/.ssh/id_ed25519.pub
+
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
