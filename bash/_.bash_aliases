@@ -12,8 +12,9 @@ alias tmux='tmux -2'
 #alias file-manager='pcmanfm &> /dev/null'
 
 command -v ncal > /dev/null && alias cal='ncal -b'
-command -v bpytop > /dev/null && alias top='bpytop'
-
+command -v btop > /dev/null && alias top='btop'
+command -v ncdu > /dev/null && alias du='ncdu --color dark --si -r'
+command -v duf > /dev/null && alias df='duf -only local'
 
 alias wget='wget -c'
 alias ..='cd ..'

@@ -1,7 +1,6 @@
 sudo apt update
 sudo apt dist-upgrade
-
-sudo apt install -y git htop tree tmux ne ncal xz-utils zip unrar htop ifupdown net-tools trash-cli bpytop
+sudo apt install -y git htop tree tmux ne ncal xz-utils zip unrar htop ifupdown net-tools trash-cli btop
 sudo apt install -y g++ g++-multilib gdb clang clang-format
 sudo apt install -y synaptic gnome-tweaks vlc mesa-utils
 sudo apt install -y fonts-firacode fonts-inconsolata ttf-mscorefonts-installer fonts-dejavu
@@ -12,14 +11,15 @@ ln -f -s ~/config/bash/_.bashrc ~/.bashrc
 ln -f -s ~/config/bash/_.profile ~/.profile
 ln -f -s ~/config/bash/_.inputrc ~/.inputrc
 ln -f -s ~/config/git/_.gitconfig ~/.gitconfig
-ln -f -s ~/config/x/_.xinitrc ~/.xinitrc
 ln -f -s ~/config/tmux/_.tmux.conf ~/.tmux.conf
-ln -s ~/config/awesome ~/.config/awesome
 ln -s ~/config/ne/_.keys ~/.ne/.keys
 ln -s ~/config/ne/_.default#ap ~/.ne/.default#ap
 tic ~/config/terminfo/xterm-color.terminfo
-sudo cp ~/config/x/_usr_share_xsessions_custom.desktop /usr/share/xsessions/custom.desktop
-mkdir ~/bin
+
+#ln -s ~/config/awesome ~/.config/awesome
+#ln -f -s ~/config/x/_.xinitrc ~/.xinitrc
+#sudo cp ~/config/x/_usr_share_xsessions_custom.desktop /usr/share/xsessions/custom.desktop
+#mkdir ~/bin
 
 #cd /usr/share/virtualbox
 #install VBoxGuestAdditions.iso as root
@@ -28,9 +28,6 @@ mkdir ~/bin
 #rust
 cargo install ripgrep
 cargo install fd-find
-
-#python
-pip install trash-cli
 
 #more MS fonts
 mkdir ~/.fonts
@@ -52,3 +49,12 @@ echo "\n\nCopy the line bellow and add to you GitHub account" && \
 cat ~/.ssh/id_ed25519.pub
 
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+# dev
+# node.js
+# java jdk
+# flutter
+
+# other
+# signal
+# discord
+# steam

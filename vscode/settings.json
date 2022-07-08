@@ -59,6 +59,14 @@
     "gitlens.statusBar.enabled": false,
     "gitlens.hovers.enabled": false,
     "gitlens.currentLine.enabled": false,
-    "window.menuBarVisibility": "toggle",
-    "editor.tabSize": 2,
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.statusBar.visible": false,
+    "javascript.preferences.useAliasesForRenames": false,
+    "typescript.preferences.useAliasesForRenames": false,
+    "security.workspace.trust.untrustedFiles": "open",
 }
