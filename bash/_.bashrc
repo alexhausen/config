@@ -66,9 +66,14 @@ fi
 [ -f ~/.name ] && PSHOST=$(<~/.name) || PSHOST='\h'
 if [ "$color_prompt" = yes ]; then
     #see examples/bash/fmt-colors.sh
-    PS1=$'\[\e[0;49;92m\]\u@\h\[\e[00m\]:\[\e[0;49;94m\]\w\[\e[00m\]\[\e[0;49;93m\]$(git_branch "(%s)") \[\e[00m\]\u3bb '
+    GREEN=$'\e[0;49;92m'
+    BLUE=$'\e[0;49;94m'
+    YELLOW=$'\e[0;49;93m'
+    NONE=$'\e[00m'
+    LAMBDA=$'\u3bb'
+    PS1=$'\[${GREEN}\]\u@\h\[${NONE}\]:\[${BLUE}\]\w\[${NONE}\]\[${YELLOW}\]$(git_branch "(%s)") \[${NONE}\]${LAMBDA} '
 else
-    PS1='\u@\h:\w$ '
+    PS1='$? \u@\h:\w$ '
 fi
 unset color_prompt force_color_prompt
 
