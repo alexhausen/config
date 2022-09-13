@@ -16,7 +16,9 @@ return {
   },
   disable_default_key_bindings = true,
   keys = {
-    { key = 'Backspace', mods= 'CTRL', action = wezterm.action.SendString '\x08'},
+    { key = 'Backspace', mods= 'CTRL', action = wezterm.action.SendString '\x08' },
+    { key = 'Insert', mods= 'CTRL', action = wezterm.action.CopyTo 'ClipboardAndPrimarySelection' },
+    { key = 'Insert', mods= 'SHIFT', action = wezterm.action.PasteFrom 'Clipboard' },
   },
   --  color_scheme = "Tango (base16)",
 }
