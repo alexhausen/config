@@ -5,6 +5,8 @@ sudo apt install -y g++ g++-multilib gdb clang clang-format
 sudo apt install -y synaptic gnome-tweaks vlc mesa-utils
 sudo apt install -y fonts-firacode fonts-inconsolata ttf-mscorefonts-installer fonts-dejavu
 sudo apt install -y virtualbox virtualbox-guest-additions-iso linux-headers-generic # pcmanfm awesome
+sudo apt install -y libssl-dev curl
+
 
 ln -f -s ~/config/bash/_.bash_aliases ~/.bash_aliases
 ln -f -s ~/config/bash/_.bashrc ~/.bashrc
@@ -26,6 +28,7 @@ tic ~/config/terminfo/xterm-color.terminfo
 #sudo mount -t vboxsf Documents /media/windows/
 
 #rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install ripgrep
 cargo install fd-find
 cargo install cargo-update
