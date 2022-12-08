@@ -15,6 +15,7 @@ command -v ncal > /dev/null && alias cal='ncal -b'
 command -v btop > /dev/null && alias top='btop'
 command -v ncdu > /dev/null && alias du='ncdu --color dark --si -r'
 command -v duf > /dev/null && alias df='duf -only local'
+command -v most > /dev/null && alias more='most +s'
 
 alias wget='wget -c'
 alias ..='cd ..'

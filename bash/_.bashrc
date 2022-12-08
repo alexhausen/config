@@ -68,10 +68,11 @@ if [ "$color_prompt" = yes ]; then
     #see examples/bash/fmt-colors.sh
     GREEN=$'\e[0;49;92m'
     BLUE=$'\e[0;49;94m'
+    CYAN=$'\e[0;49;96m'
     YELLOW=$'\e[0;49;93m'
     NONE=$'\e[00m'
     LAMBDA=$'\u3bb'
-    PS1=$'\[${GREEN}\]\u@\h\[${NONE}\]:\[${BLUE}\]\w\[${NONE}\]\[${YELLOW}\]$(git_branch "(%s)") \[${NONE}\]${LAMBDA} '
+    PS1=$'\[${GREEN}\]\u@\h\[${NONE}\]:\[${CYAN}\]\w\[${NONE}\]\[${YELLOW}\]$(git_branch "(%s)") \[${NONE}\]${LAMBDA} '
 else
     PS1='$? \u@\h:\w$ '
 fi
@@ -132,6 +133,9 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 # enable fzf on tmux
 export FZF_TMUX=1
 
+# use 'most' as pager for man pages
+export PAGER=most
+
 stty stop undef
 
 # update DISPLAY when connected to a remote host via tmux
@@ -168,3 +172,5 @@ fi
 if [ -f ~/.bash_local ]; then
   . ~/.bash_local
 fi
+
+export NODE_OPTIONS="--experimental-vm-modules --no-warnings"
