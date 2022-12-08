@@ -173,4 +173,4 @@ if [ -f ~/.bash_local ]; then
   . ~/.bash_local
 fi
 
-export NODE_OPTIONS="--experimental-vm-modules --no-warnings"
+. "$HOME/.cargo/env"
