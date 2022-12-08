@@ -1,12 +1,15 @@
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install -y git htop tree tmux ne ncal xz-utils zip unrar htop ifupdown net-tools trash-cli btop
+sudo apt install -y git htop tree tmux ne ncal xz-utils zip unrar htop ifupdown net-tools trash-cli btop most fzf
 sudo apt install -y g++ g++-multilib gdb clang clang-format
 sudo apt install -y synaptic gnome-tweaks vlc mesa-utils
 sudo apt install -y fonts-firacode fonts-inconsolata ttf-mscorefonts-installer fonts-dejavu
-sudo apt install -y virtualbox virtualbox-guest-additions-iso linux-headers-generic # pcmanfm awesome
+sudo apt install -y linux-headers-generic
 sudo apt install -y libssl-dev curl
+sudo apt install -y qemu-utils virt-manager libvirt-daemon
+# pcmanfm awesome
 
+# https://www.funkyspacemonkey.com/how-to-use-kvm-qemu-virt-manager-to-set-up-virtual-machines
 
 ln -f -s ~/config/bash/_.bash_aliases ~/.bash_aliases
 ln -f -s ~/config/bash/_.bashrc ~/.bashrc
@@ -14,18 +17,16 @@ ln -f -s ~/config/bash/_.profile ~/.profile
 ln -f -s ~/config/bash/_.inputrc ~/.inputrc
 ln -f -s ~/config/git/_.gitconfig ~/.gitconfig
 ln -f -s ~/config/tmux/_.tmux.conf ~/.tmux.conf
-ln -s ~/config/ne/_.keys ~/.ne/.keys
-ln -s ~/config/ne/_.default#ap ~/.ne/.default#ap
+ln -f -s ~/config/bash/_.dircolors ~/.dircolors
+mkdir ~/.ne/
+ln -f -s ~/config/ne/_.keys ~/.ne/.keys
+ln -f -s ~/config/ne/_.default#ap ~/.ne/.default#ap
 tic ~/config/terminfo/xterm-color.terminfo
 
 #ln -s ~/config/awesome ~/.config/awesome
 #ln -f -s ~/config/x/_.xinitrc ~/.xinitrc
 #sudo cp ~/config/x/_usr_share_xsessions_custom.desktop /usr/share/xsessions/custom.desktop
 #mkdir ~/bin
-
-#cd /usr/share/virtualbox
-#install VBoxGuestAdditions.iso as root
-#sudo mount -t vboxsf Documents /media/windows/
 
 #rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -50,7 +51,7 @@ echo "options snd_hda_intel power_save=0" | sudo tee -a /etc/modprobe.d/audio_di
 sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml
 sudo chown gdm:gdm ~gdm/.config/monitors.xml
 
-#terminal
+# terminal
 https://github.com/wez/wezterm/releases/download/20220904-064125-9a6cee2b/wezterm-20220904-064125-9a6cee2b.Ubuntu22.04.deb
 sudo dpkg -i wezterm-20220904-064125-9a6cee2b.Ubuntu22.04.deb
 
