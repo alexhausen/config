@@ -40,11 +40,15 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
   debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-TERM='xterm-color'
+# don't set TERM on bashrc
+# TERM='xterm-256color'
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-  *color) color_prompt=yes;;
+  *color)
+    color_prompt=yes
+    export COLORTERM=truecolor
+    ;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
