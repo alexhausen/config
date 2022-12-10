@@ -54,7 +54,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-force_color_prompt=yes
+# force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -71,12 +71,12 @@ fi
 if [ "$color_prompt" = yes ]; then
     #see examples/bash/fmt-colors.sh
     GREEN=$'\e[0;49;92m'
-    BLUE=$'\e[0;49;94m'
+    BLUE=$'\e[0;38;5;33m'
     CYAN=$'\e[0;49;96m'
     YELLOW=$'\e[0;49;93m'
     NONE=$'\e[00m'
     LAMBDA=$'\u3bb'
-    PS1=$'\[${GREEN}\]\u@\h\[${NONE}\]:\[${CYAN}\]\w\[${NONE}\]\[${YELLOW}\]$(git_branch "(%s)") \[${NONE}\]${LAMBDA} '
+    PS1=$'\[${GREEN}\]\u@\h\[${NONE}\]:\[${BLUE}\]\w\[${NONE}\]\[${YELLOW}\]$(git_branch "(%s)") \[${NONE}\]${LAMBDA} '
 else
     PS1='$? \u@\h:\w$ '
 fi
