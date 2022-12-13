@@ -1,15 +1,13 @@
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install -y git htop tree tmux ne ncal xz-utils zip unrar htop ifupdown net-tools trash-cli btop most fzf
+sudo apt install -y git htop tree tmux ne ncal xz-utils zip unrar htop ifupdown net-tools trash-cli btop most fzf curl
 sudo apt install -y g++ g++-multilib gdb clang clang-format
 sudo apt install -y synaptic gnome-tweaks vlc mesa-utils
 sudo apt install -y fonts-firacode fonts-inconsolata ttf-mscorefonts-installer fonts-dejavu
 sudo apt install -y linux-headers-generic
-sudo apt install -y libssl-dev curl
-sudo apt install -y qemu-utils virt-manager libvirt-daemon
+sudo apt install -y libssl-dev qemu-utils virt-manager libvirt-daemon
+sudo apt install profile-sync-daemon
 # pcmanfm awesome
-
-# https://www.funkyspacemonkey.com/how-to-use-kvm-qemu-virt-manager-to-set-up-virtual-machines
 
 ln -f -s ~/config/bash/_.bash_aliases ~/.bash_aliases
 ln -f -s ~/config/bash/_.bashrc ~/.bashrc
@@ -17,35 +15,36 @@ ln -f -s ~/config/bash/_.profile ~/.profile
 ln -f -s ~/config/bash/_.inputrc ~/.inputrc
 ln -f -s ~/config/git/_.gitconfig ~/.gitconfig
 ln -f -s ~/config/tmux/_.tmux.conf ~/.tmux.conf
-ln -f -s ~/config/bash/_.dircolors ~/.dircolors
+ln -f -s ~/config/bash/_.dircolors-256-dark ~/.dircolors
 mkdir ~/.ne/
 ln -f -s ~/config/ne/_.keys ~/.ne/.keys
 ln -f -s ~/config/ne/_.default#ap ~/.ne/.default#ap
-tic ~/config/terminfo/xterm-color.terminfo
 
+mkdir ~/bin
+
+# configurações desabilitadas
+#tic ~/config/terminfo/xterm-color.terminfo
 #ln -s ~/config/awesome ~/.config/awesome
 #ln -f -s ~/config/x/_.xinitrc ~/.xinitrc
 #sudo cp ~/config/x/_usr_share_xsessions_custom.desktop /usr/share/xsessions/custom.desktop
-#mkdir ~/bin
 
-#rust
+# rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install ripgrep
 cargo install fd-find
 cargo install cargo-update
-#cargo install alacritty
 
-#update rust packages
+# update rust packages
 cargo install-update -a
 
-#more MS fonts
+# more MS fonts
 mkdir ~/.fonts
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
 https://github.com/tonsky/FiraCode
 
-# disable power save
-echo "options snd_hda_intel power_save=0" | sudo tee -a /etc/modprobe.d/audio_disable_powersave.conf
+# disable power save do áudio (Lenovo E490)
+# echo "options snd_hda_intel power_save=0" | sudo tee -a /etc/modprobe.d/audio_disable_powersave.conf
 
 # gdm login config
 sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml
@@ -61,12 +60,19 @@ echo "\n\nCopy the line bellow and add to you GitHub account" && \
 cat ~/.ssh/id_ed25519.pub
 
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
-# dev
+
+# dev:
 # node.js
 # java jdk
 # flutter
 
-# other
+# other:
 # signal
 # discord
 # steam
+
+# configuração do qemu
+https://www.funkyspacemonkey.com/how-to-use-kvm-qemu-virt-manager-to-set-up-virtual-machines
+
+# aumenta a vida útil do SSD
+https://github.com/graysky2/profile-sync-daemon
