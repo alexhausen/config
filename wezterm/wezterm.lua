@@ -19,6 +19,11 @@ return {
     right = 0,
     bottom = 0,
   },
+  audible_bell = "Disabled",
+  visual_bell = {
+    fade_in_duration_ms = 120,
+    fade_out_duration_ms = 120,
+  },
   disable_default_key_bindings = true,
   key_tables = {
     copy_mode = {},
