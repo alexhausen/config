@@ -70,6 +70,10 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 # signal
 # discord
 # steam
+# google-chrome
+
+# substitui o snap do FF pelo PPA:
+https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04
 
 # configuração do qemu
 https://www.funkyspacemonkey.com/how-to-use-kvm-qemu-virt-manager-to-set-up-virtual-machines
