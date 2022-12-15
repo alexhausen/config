@@ -34,3 +34,5 @@ alias del='trash-put'
 alias alert='notify-send "Alert" "$(history | tail -n1 ; [ $? = 0 ] && echo OK || echo Error)" --icon=dialog-warning'
 
 alias flutter='TERM=xterm-256color flutter'
+
+alias git='PAGER=less git'
