@@ -25,7 +25,8 @@
 	remoteBranch = cyan
 [alias]
 	hist = log --color --graph --oneline --decorate --all
-	lg = log --color --graph --oneline --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lg = log --color --graph --oneline --abbrev=7 --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    log-full = log --color --shortstat --pretty=fuller
 	st = status -sb
 	co = checkout
 	br = branch
