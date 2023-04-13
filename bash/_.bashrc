@@ -74,8 +74,8 @@ EMPTY_COMMAND=1
 __prompt_command() {
     # see colors at examples/bash/fmt-colors.sh
     local exit_code="$?"
-    if [[ $exit_code -ne 0 ]] && [[ $EMPTY_COMMAND -eq 0 ]]; then
-      echo -e "\e[95mError code: $exit_code\e[0m"
+    if [[ $exit_code -ne 0 ]] && [[ $exit_code -ne 141 ]] && [[ $EMPTY_COMMAND -eq 0 ]]; then
+      echo -e "\e[95mExit code: $exit_code. Errno: $(errno $exit_code).\e[0m"
     fi
     EMPTY_COMMAND=1
 }
