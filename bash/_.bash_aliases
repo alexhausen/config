@@ -14,7 +14,7 @@ alias tmux='tmux -2'
 command -v ncal > /dev/null && alias cal='ncal -b'
 command -v btop > /dev/null && alias top='btop'
 command -v ncdu > /dev/null && alias du='ncdu --color dark --si -r'
-command -v duf > /dev/null && alias df='duf -only local'
+command -v duf > /dev/null && alias df='duf -only local -hide-mp /var/snap/firefox/common/host-hunspell,/boot/efi'
 command -v most > /dev/null && alias more='most +s'
 
 alias wget='wget -c'

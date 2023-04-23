@@ -64,4 +64,4 @@ function prompt_end {
   echo -ne "${RESET}${fg_color}${RESET}"
 }
 
-PS1="$(prompt_dir)"$'$(prompt_git)$(prompt_end)'" "
+PS1="$(prompt_dir) "$'$(prompt_git)$(prompt_end)'" "
