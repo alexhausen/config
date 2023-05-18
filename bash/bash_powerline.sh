@@ -42,15 +42,22 @@ function git_stash_dirty {
   [[ -n $stash ]] && echo " ⚑"
 }
 
+function git_ahead {
+  # Your branch is ahead of 'origin/branch' by n commits.
+  local ahead=$(command git rev-list --count origin..HEAD 2> /dev/null | tail -n 1)
+  [[ $ahead != "0" ]] && echo " ↑"
+}
+
 function prompt_git {
   local ref=$(git_ref)
   if [[ -n $ref ]]; then
     local dirty=$(git_status_dirty)
     local stash=$(git_stash_dirty)
+    local ahead=$(git_ahead)
     local bg_color=""
     local fg_transition=$FG_DIR
     [[ -n $dirty ]] && bg_color=$BG_GIT_DIRTY || bg_color=$BG_GIT
-    echo -ne "${bg_color}${fg_transition}${FG_COLOR} ${ref}${stash}${dirty}"
+    echo -ne "${bg_color}${fg_transition}${FG_COLOR} ${ref}${stash}${dirty}${ahead}"
   fi
 }
 
