@@ -44,7 +44,8 @@ function git_stash_dirty {
 
 function git_ahead {
   # Your branch is ahead of 'origin/branch' by n commits.
-  local ahead=$(command git rev-list --count origin..HEAD 2> /dev/null | tail -n 1)
+  local ref=$(command git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  local ahead=$(command git rev-list --count origin/${ref}..HEAD 2> /dev/null | tail -n 1)
   [[ $ahead != "0" ]] && echo " ↑"
 }
 
