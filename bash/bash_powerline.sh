@@ -34,31 +34,37 @@ function git_ref {
 
 function git_status_dirty {
   local dirty=$(command git status -s 2> /dev/null | tail -n 1)
-  [[ -n $dirty ]] && echo " ●"
+  [[ -n $dirty ]] && echo "●"
 }
 
-function git_stash_dirty {
+function git_stash {
   local stash=$(command git stash list 2> /dev/null | tail -n 1)
-  [[ -n $stash ]] && echo " ⚑"
+  [[ -n $stash ]] && echo "⚑"
 }
 
 function git_ahead {
   # Your branch is ahead of 'origin/branch' by n commits.
-  local ref=$(command git rev-parse --abbrev-ref HEAD 2> /dev/null)
-  local ahead=$(command git rev-list --count origin/${ref}..HEAD 2> /dev/null | tail -n 1)
-  [[ $ahead != "0" ]] && echo " ↑"
+  local ahead=$(git status -sb --ahead-behind --porcelain 2> /dev/null | tail -n 1 | sed -nE 's/.*(ahead ([0-9]+)).*/\2/p')
+  [[ -n $ahead ]] && echo "↑"
+}
+
+function git_behind {
+  # Your branch is behind of 'origin/branch' by n commits.
+  local behind=$(git status -sb --ahead-behind --porcelain 2> /dev/null | tail -n 1 | sed -nE 's/.*(behind ([0-9]+)).*/\2/p')
+  [[ -n $behind ]] && echo "↓"
 }
 
 function prompt_git {
   local ref=$(git_ref)
   if [[ -n $ref ]]; then
     local dirty=$(git_status_dirty)
-    local stash=$(git_stash_dirty)
+    local stash=$(git_stash)
     local ahead=$(git_ahead)
+    local behind=$(git_behind)
     local bg_color=""
     local fg_transition=$FG_DIR
     [[ -n $dirty ]] && bg_color=$BG_GIT_DIRTY || bg_color=$BG_GIT
-    echo -ne "${bg_color}${fg_transition}${FG_COLOR} ${ref}${stash}${dirty}${ahead}"
+    echo -ne "${bg_color}${fg_transition}${FG_COLOR} ${ref} ${stash}${dirty}${ahead}${behind}"
   fi
 }
 
