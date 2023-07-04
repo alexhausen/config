@@ -1,12 +1,13 @@
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install -y git htop tree tmux ne ncal xz-utils zip unrar htop ifupdown net-tools trash-cli btop most fzf curl duf ncdu
-sudo apt install -y g++ g++-multilib gdb clang clang-format cmake
-sudo apt install -y synaptic gnome-tweaks vlc mesa-utils moreutils
-sudo apt install -y fonts-firacode fonts-inconsolata ttf-mscorefonts-installer fonts-dejavu
+sudo apt install -y git htop tree tmux ne ncal xz-utils zip unrar htop ifupdown net-tools trash-cli btop most fzf curl duf ncdu moreutils
+sudo apt install -y g++ g++-multilib gdb clang clang-format cmake pkg-config
+sudo apt install -y synaptic gnome-tweaks vlc mesa-utils
+sudo apt install -y fonts-firacode fonts-inconsolata fonts-dejavu
 sudo apt install -y linux-headers-generic
-sudo apt install -y libssl-dev qemu-utils virt-manager libvirt-daemon
-sudo apt install profile-sync-daemon
+sudo apt install -y libssl-dev
+sudo apt install -y qemu-utils virt-manager libvirt-daemon
+sudo apt install -y profile-sync-daemon
 # pcmanfm awesome
 
 ln -f -s ~/config/bash/_.bash_aliases ~/.bash_aliases
@@ -37,7 +38,10 @@ cargo install cargo-update
 # update rust packages
 cargo install-update -a
 
-# more MS fonts
+# golang
+sudo snap install --classic go
+
+# MS fonts
 mkdir ~/.fonts
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
@@ -51,8 +55,8 @@ sudo cp ~/.config/monitors.xml ~gdm/.config/monitors.xml
 sudo chown gdm:gdm ~gdm/.config/monitors.xml
 
 # terminal
-https://github.com/wez/wezterm/releases/download/20220904-064125-9a6cee2b/wezterm-20220904-064125-9a6cee2b.Ubuntu22.04.deb
-sudo dpkg -i wezterm-20220904-064125-9a6cee2b.Ubuntu22.04.deb
+curl -LO https://github.com/wez/wezterm/releases/download/20230408-112425-69ae8472/wezterm-20230408-112425-69ae8472.Ubuntu22.04.deb
+sudo dpkg -i wezterm-20230408-112425-69ae8472.Ubuntu22.04.deb
 
 # git ssh config
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -N '' -C 'alex.hausen@gmail.com' && \
