@@ -1,7 +1,7 @@
 [core]
 	excludesfile = ~/.gitignore
 [include]
-  path = ~/.gitconfig-local
+	path = ~/.gitconfig-local
 [fetch]
 	prune = true
 [pull]
@@ -9,6 +9,7 @@
 [push]
 #	default = current
 	default = upstream
+	autoSetupRemote = true
 [color "branch"]
 	current = yellow reverse
 	local = yellow
@@ -26,7 +27,7 @@
 [alias]
 	hist = log --color --graph --oneline --decorate --all
 	lg = log --color --graph --oneline --abbrev=7 --pretty=format:'%C(yellow)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-    log-full = log --color --shortstat --pretty=fuller
+	log-full = log --color --shortstat --pretty=fuller
 	st = status -sb
 	co = checkout
 	br = branch
