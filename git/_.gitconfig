@@ -35,6 +35,7 @@
 	ver = describe --tags
 	fuckup = commit --fixup HEAD
 	praise = blame
+	dif = diff --word-diff
 [init]
 	defaultBranch = main
 [user]
