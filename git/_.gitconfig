@@ -36,6 +36,7 @@
 	fuckup = commit --fixup HEAD
 	praise = blame
 	dif = diff --word-diff
+        undo = reset --soft HEAD^
 [init]
 	defaultBranch = main
 [user]
