@@ -1,7 +1,9 @@
+[user]
+	name = Alexandre Hausen
 [core]
 	excludesfile = ~/.gitignore
-[include]
-	path = ~/.gitconfig-local
+	autocrlf = false
+	eol = lf
 [fetch]
 	prune = true
 [pull]
@@ -35,10 +37,11 @@
 	ver = describe --tags
 	fuckup = commit --fixup HEAD
 	praise = blame
-	dif = diff --word-diff
-        undo = reset --soft HEAD^
+	wdiff = diff --word-diff
+	undo = reset --soft HEAD^
 [init]
 	defaultBranch = main
-[user]
-	email = alex.hausen@gmail.com
-	name = Alexandre Hausen
+[include]
+	path = ~/.gitconfig-local
+[includeIf "gitdir:~/config/"]
+	path = ~/.gitconfig-home

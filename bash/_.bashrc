@@ -138,6 +138,10 @@ export PAGER=most
 
 stty stop undef
 
+if [[ -f ~/.bash_local ]]; then
+  source ~/.bash_local
+fi
+
 if [[ ! -v PATH_EXPORTED_FROM_BASHRC ]]; then
   [[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
   [[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin:$PATH"
@@ -148,9 +152,6 @@ if [[ ! -v PATH_EXPORTED_FROM_BASHRC ]]; then
   if [[ -f "$HOME/.cargo/env" ]]; then
       source "$HOME/.cargo/env"
   fi
+  export PATH=$PATH:/usr/local/go/bin:${GOPATH}/bin:${GOROOT}/bin
   export PATH_EXPORTED_FROM_BASHRC=
-fi
-
-if [[ -f ~/.bash_local ]]; then
-  source ~/.bash_local
 fi
