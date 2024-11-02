@@ -123,10 +123,6 @@ function calc () {
   bc <<< "scale=2; $*"
 }
 
-# fuzzy finder key bindings (fzf)
-[ -f ~/.fzf.bash ] && FZF_KB=~/.fzf.bash || FZF_KB=/usr/share/doc/fzf/examples/key-bindings.bash
-[[ -f $FZF_KB ]] && source $FZF_KB
-
 # enable fzf on tmux
 export FZF_TMUX=1
 
@@ -155,3 +151,6 @@ if [[ ! -v PATH_EXPORTED_FROM_BASHRC ]]; then
   export PATH=$PATH:/usr/local/go/bin:${GOPATH}/bin:${GOROOT}/bin
   export PATH_EXPORTED_FROM_BASHRC=
 fi
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
