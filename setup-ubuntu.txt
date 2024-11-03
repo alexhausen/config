@@ -1,6 +1,6 @@
 sudo apt update
 sudo apt dist-upgrade
-sudo apt install -y git htop tree tmux ne ncal xz-utils zip unrar htop ifupdown net-tools trash-cli btop most fzf curl duf ncdu moreutils
+sudo apt install -y git htop tree tmux ne ncal xz-utils zip unrar htop ifupdown net-tools trash-cli btop most fzf curl duf ncdu moreutils zsh
 sudo apt install -y g++ g++-multilib gdb clang clang-format cmake pkg-config
 sudo apt install -y synaptic gnome-tweaks vlc mesa-utils
 sudo apt install -y fonts-firacode fonts-inconsolata fonts-dejavu
@@ -84,3 +84,6 @@ https://www.funkyspacemonkey.com/how-to-use-kvm-qemu-virt-manager-to-set-up-virt
 
 # aumenta a vida útil do SSD
 https://github.com/graysky2/profile-sync-daemon
+
+# zsh
+chsh -s $(which zsh)
