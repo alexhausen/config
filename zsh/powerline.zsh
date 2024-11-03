@@ -1,30 +1,34 @@
-# Set up the prompt
-# autoload -Uz promptinit
-# autoload -Uz vcs_info
-# promptinit
-# prompt adam1
-#PS1="%K{blue}%n@%m%k %B%F{cyan}%(4~|...|)%3~%F{white} %# %b%f%k"
+# Inspired by Oh-my-bash Agnoster theme
+# see https://github.com/ohmybash/oh-my-bash/blob/master/themes/agnoster/agnoster.theme.sh
 
 # Enable substitution in the prompt
 setopt prompt_subst
 
+#https://stackoverflow.com/questions/4842424/list-of-ansi-color-escape-sequences
 BG_BLACK='\001\e[40m\002'
 BG_GREEN='\001\e[42m\002'
 BG_YELLOW='\001\e[43m\002'
-BG_BLUE='\001\e[48;5;33m\002'
+BG_LG_BLUE='\001\e[48;5;33m\002'
 
 FG_BLACK='\001\e[30m\002'
+FG_RED='\001\e[31m\002'
 FG_GREEN='\001\e[32m\002'
 FG_YELLOW='\001\e[33m\002'
-FG_BLUE='\001\e[38;5;33m\002'
+FG_LG_BLUE='\001\e[38;5;33m\002'
+FG_HI_PINK='\001\e[38;5;13m\002'
+FG_HI_RED='\001\e[38;5;9m\002'
+FG_HI_GREEN='\001\e[38;5;10m\002'
 
 BG_GIT=$BG_GREEN
 BG_GIT_DIRTY=$BG_YELLOW
-BG_DIR=$BG_BLUE
+BG_DIR=$BG_LG_BLUE
 
 FG_GIT=$FG_GREEN
 FG_GIT_DIRTY=$FG_YELLOW
-FG_DIR=$FG_BLUE
+FG_DIR=$FG_LG_BLUE
+
+FG_STATUS_OK=$FG_GREEN
+FG_STATUS_ERR=$FG_RED
 
 FG_COLOR=$FG_BLACK
 
@@ -58,9 +62,9 @@ function prompt_git {
     local stash=$(git_stash)
     local ahead=$(git_ahead)
     local behind=$(git_behind)
-    local bg_color=""
+    local bg_color=$BG_GIT
     local fg_transition=$FG_DIR
-    [[ -n $dirty ]] && bg_color=$BG_GIT_DIRTY || bg_color=$BG_GIT
+    [[ -n $dirty ]] && bg_color=$BG_GIT_DIRTY
     echo -ne "${bg_color}${fg_transition}${FG_COLOR} ${vcs_info_msg_0_}${stash}${ahead}${behind}"
   fi
 }
@@ -76,7 +80,17 @@ function prompt_end {
 }
 
 function prompt_dir {
-  echo -ne "${RESET}${BG_DIR}${FG_COLOR}%~"
+  echo -ne "${RESET}${BG_DIR}${FG_COLOR}%~ ${RESET}"
+}
+
+function prompt_status {
+  local fg_color=$FG_STATUS_OK
+  [ $CMD_STATUS -ne 0 ] && fg_color=${FG_STATUS_ERR}
+  echo -ne "${RESET}${BG_DIR}${fg_color} ${RESET}"
+}
+
+function build_prompt {
+  echo -ne "$(prompt_status)$(prompt_dir)$(prompt_git)$(prompt_end) "
 }
 
 # enable vcs_info and style
@@ -88,12 +102,9 @@ zstyle ':vcs_info:*' stagedstr '●'
 zstyle ':vcs_info:git:*' formats '%b %u%c'
 zstyle ':vcs_info:git:*' actionformats '%b | %a%u%c'
 
-function build_prompt {
-  echo -ne "$(prompt_dir)$(prompt_git)$(prompt_end) "
-}
-
+# runs before displaying the prompt
 precmd () {
-  # always load before displaying the prompt
+  CMD_STATUS=$?
   vcs_info
   PS1="$(build_prompt)"
 }
