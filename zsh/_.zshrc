@@ -1,13 +1,20 @@
 # zsh config path
 ZSH_CONFIG=$HOME/config/zsh
 
-DEVDIR="$HOME/develop"
-DEVPATH="$DEVDIR/java/jdk/bin:$DEVDIR/flutter/bin:$DEVDIR/Android/Sdk/emulator:$DEVDIR/Android/Sdk/platform-tools:$DEVDIR/node/bin:/usr/local/go/bin:${GOPATH}/bin:${GOROOT}/bin"
-BASEPATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin"
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$DEVPATH:$BASEPATH
+if [[ -f "$HOME/.zsh_local" ]]; then
+  source "$HOME/.zsh_local"
+fi
 
 if [[ -f "$HOME/.cargo/env" ]]; then
   source "$HOME/.cargo/env"
+fi
+
+DEVDIR="$HOME/develop"
+DEVPATH="$DEVDIR/java/jdk/bin:$DEVDIR/flutter/bin:$DEVDIR/Android/Sdk/emulator:$DEVDIR/Android/Sdk/platform-tools:$DEVDIR/node/bin:/usr/local/go/bin:${GOPATH}/bin:${GOROOT}/bin"
+
+if [[ ! -v PATH_EXPORTED_FROM_ZSHRC ]]; then
+  export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$DEVPATH:$PATH
+  export PATH_EXPORTED_FROM_ZSHRC=
 fi
 
 # ls colors
