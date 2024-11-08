@@ -5,12 +5,15 @@
 # Enable substitution in the prompt
 setopt prompt_subst
 
-COLOR_GIT=green
-COLOR_GIT_DIRTY=magenta
-COLOR_DIR=blue
+FG_DIR='%{$fg[blue]%}'
+FG_GIT='%{\e[38;5;22m%}'
+FG_GIT_DIRTY='%{$fg[magenta]%}'
+BG_DIR='%{$bg[blue]%}'
+BG_GIT='%{\e[48;5;22m%}'
+BG_GIT_DIRTY='%{$bg[magenta]%}'
 
-COLOR_STATUS_OK=green
-COLOR_STATUS_ERR=red
+COLOR_STATUS_OK='%{\e[38;5;22m%}'
+COLOR_STATUS_ERR='%{$fg[red]%}'
 
 function git_status_dirty {
   local dirty=$(command git status -s 2> /dev/null | tail -n 1)
@@ -40,31 +43,31 @@ function prompt_git {
     local stash=$(git_stash)
     local ahead=$(git_ahead)
     local behind=$(git_behind)
-    local bg_color=$COLOR_GIT
-    local fg_transition=$COLOR_DIR
-    [[ -n $dirty ]] && bg_color=$COLOR_GIT_DIRTY
-    echo -ne "%{$bg[$bg_color]%}%{$fg[$fg_transition]%}%{$fg[white]%} ${vcs_info_msg_0_}${stash}${ahead}${behind}"
+    local bg_color=$BG_GIT
+    local fg_color='%{$fg[white]%}'
+    [[ -n $dirty ]] && bg_color=$BG_GIT_DIRTY
+    echo -ne "${bg_color}${FG_DIR}${fg_color} ${vcs_info_msg_0_}${stash}${ahead}${behind}"
   fi
 }
 
 function prompt_end {
-  local fg_color=$COLOR_DIR
+  local fg_color=$FG_DIR
   if [[ -n $vcs_info_msg_0_ ]]; then
-    fg_color=$COLOR_GIT
+    fg_color=$FG_GIT
     local dirty=$(git_status_dirty)
-    [[ -n $dirty ]] && fg_color=$COLOR_GIT_DIRTY
+    [[ -n $dirty ]] && fg_color=${FG_GIT_DIRTY}
   fi
-  echo -ne "%{$reset_color%}%{$fg[$fg_color]%}%{$reset_color%} "
+  echo -ne "%{$reset_color%}${fg_color}%{$reset_color%} "
 }
 
 function prompt_dir {
-  echo -ne "%{$reset_color%}%{$bg[$COLOR_DIR]%}%~%{$reset_color%}"
+  echo -ne "%{$reset_color%}${BG_DIR}%~%{$reset_color%}"
 }
 
 function prompt_status {
   local fg_color=$COLOR_STATUS_OK
   [ $CMD_STATUS -ne 0 ] && fg_color=$COLOR_STATUS_ERR
-  echo -ne "%{$reset_color%}%{$bg[$COLOR_DIR]%}%{$fg[$fg_color]%} %{$reset_color%}"
+  echo -ne "%{$reset_color%}${BG_DIR}${fg_color}%{$reset_color%}"
 }
 
 function build_prompt {
