@@ -1,10 +1,10 @@
 # aliases
 
 alias ls='ls --color=auto'
-alias ll='ls -o --si'
-alias la='ls -A'
-alias l='ls -CF'
-alias llsize='ll -S'
+alias ll='ls -l'
+alias la='ls -a'
+#alias l='ls -CF'
+#alias llsize='ll -S'
 alias grep='grep --color=auto'
 
 alias tmux='tmux -2'
@@ -14,6 +14,7 @@ command -v btop > /dev/null && alias top='btop'
 command -v ncdu > /dev/null && alias du='ncdu --color dark --si -r'
 command -v duf > /dev/null && alias df='duf -only local -hide-mp /var/snap/firefox/common/host-hunspell,/boot/efi'
 command -v most > /dev/null && alias more='most +s'
+command -v exa > /dev/null && alias ls='exa --icons'
 
 alias wget='wget -c'
 alias ..='cd ..'

@@ -51,6 +51,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
+# disable partial line mark '%'
+PROMPT_EOL_MARK=
+
 # enable extended glob
 setopt EXTENDED_GLOB
 
