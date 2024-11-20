@@ -6,7 +6,7 @@ return {
   automatically_reload_config = true,
   initial_rows = 25,
   initial_cols = 80,
-  font = wezterm.font 'Fira Code',
+  font = wezterm.font 'FiraCode Nerd Font',
   font_size = 14,
   enable_tab_bar = false,
   selection_word_boundary = " \t\n{}[]()\"'`,;:│=&!%",
