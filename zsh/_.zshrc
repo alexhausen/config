@@ -57,6 +57,9 @@ PROMPT_EOL_MARK=
 # enable extended glob
 setopt EXTENDED_GLOB
 
+# enable '#' comments
+setopt interactivecomments
+
 # completion system
 autoload -Uz compinit
 compinit
