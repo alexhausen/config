@@ -26,6 +26,10 @@ test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
+# fix ctrl-left/right arrows
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
 # ctrl-h delete previous word
 bindkey "^H" backward-kill-word
 
