@@ -20,6 +20,8 @@ fi
 # ls colors
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
+export WORDCHARS='_~*?'
+
 # tip: use 'showkey -a' to display key code
 
 # fix home/end keys
@@ -30,8 +32,15 @@ bindkey "^[[4~" end-of-line
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
+# alt-f alt-b navigate words
+bindkey "^[f" vi-forward-blank-word
+bindkey "^[b" vi-backward-blank-word
+
 # ctrl-h delete previous word
 bindkey "^H" backward-kill-word
+
+# ctrl-del delete next word
+bindkey "^[[3;5~" kill-word
 
 # unbind ctrl-w
 bindkey -r "^W"
