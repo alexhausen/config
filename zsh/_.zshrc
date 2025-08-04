@@ -20,7 +20,7 @@ fi
 # ls colors
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 
-export WORDCHARS='_~*?'
+export WORDCHARS='-_~*?'
 
 # tip: use 'showkey -a' to display key code
 
