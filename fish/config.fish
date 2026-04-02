@@ -1,6 +1,4 @@
 if status is-interactive
-  # Commands to run in interactive sessions can go here
-
   # Disable the greeting message
   set -g fish_greeting
 end
@@ -14,8 +12,11 @@ bind \e\[3\;5~ kill-word
 # unbind alt-s
 bind \es ''
 
-# Set your preferred editor
+# set your preferred editor
 set -gx EDITOR ne
+
+# set java font anti-alias
+set -gx _JAVA_OPTIONS '-Dawt.useSystemAAFontSettings=lcd'
 
 # Add custom paths
 fish_add_path ~/bin
